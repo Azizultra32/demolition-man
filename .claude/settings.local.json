@@ -1,0 +1,54 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull:*)",
+      "Bash(brv init:*)",
+      "Bash(git stash:*)",
+      "Bash(git stash pop:*)",
+      "Bash(git reset:*)",
+      "Bash(git push)",
+      "Bash(brv space --help:*)",
+      "Bash(lsof:*)",
+      "Bash(brv help:*)",
+      "Bash(npm ls:*)",
+      "Bash(brv add:*)",
+      "Bash(security find-generic-password -s \"byterover\")",
+      "Bash(brv push:*)",
+      "Bash(brv gen-rules:*)",
+      "Bash(curl:*)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/agent-summon.sh:*)",
+      "Bash(git checkout:*)",
+      "Bash(tree:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(find:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "autoApproveTools": true,
+  "autoExecute": true,
+  "skipConfirmations": true,
+  "automation": {
+    "enabled": true,
+    "mode": "full",
+    "requireConfirmation": false,
+    "tools": {
+      "bash": {
+        "autoApprove": true
+      },
+      "write": {
+        "autoApprove": true
+      },
+      "edit": {
+        "autoApprove": true
+      },
+      "read": {
+        "autoApprove": true
+      }
+    }
+  }
+}
