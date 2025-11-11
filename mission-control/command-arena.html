@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Arena - Agent Life Force System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .arena-container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e2541 0%, #2a3154 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1e2541 0%, #2a3154 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            margin-right: 12px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #f3f4f6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-left: auto;
+        }
+
+        .status-active { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #4ade80; }
+        .status-standby { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid #fbbf24; }
+        .status-available { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #4ade80; }
+        .status-delayed { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid #fbbf24; }
+        .status-unavailable { background: rgba(249, 115, 22, 0.2); color: #fb923c; border: 1px solid #fb923c; }
+        .status-extended { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+
+        .agent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .agent-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid;
+            transition: all 0.3s ease;
+        }
+
+        .agent-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .agent-item.broski { border-left-color: #60a5fa; }
+        .agent-item.homeslice { border-left-color: #f472b6; }
+
+        .agent-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .agent-id {
+            font-weight: 600;
+            color: #f3f4f6;
+            font-size: 1rem;
+        }
+
+        .agent-gender {
+            margin-left: 8px;
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .agent-role {
+            color: #a78bfa;
+            font-size: 0.85rem;
+            margin-left: auto;
+        }
+
+        .agent-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 8px;
+        }
+
+        .life-force-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .life-force-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4ade80, #60a5fa, #a78bfa);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .mission-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 3px solid #60a5fa;
+        }
+
+        .mission-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .mission-id {
+            font-weight: 600;
+            color: #60a5fa;
+            font-size: 0.85rem;
+        }
+
+        .mission-name {
+            color: #f3f4f6;
+            margin-left: 10px;
+            flex: 1;
+        }
+
+        .mission-progress {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        .flash-message {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid #ef4444;
+            border-left: 4px solid #ef4444;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: #fca5a5;
+        }
+
+        .flash-message.info {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+            color: #93c5fd;
+        }
+
+        .ali-status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .ali-indicator {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 0 20px currentColor;
+        }
+
+        .ali-details {
+            flex: 1;
+        }
+
+        .ali-label {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .ali-time {
+            font-size: 1.1rem;
+            color: #f3f4f6;
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 37, 65, 0.95);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="arena-container">
+        <header>
+            <h1>⚔️ COMMAND ARENA</h1>
+            <div class="subtitle">Agent Life Force System • Mission Control ID: 48707</div>
+        </header>
+
+        <div class="refresh-indicator pulse">
+            🔄 Auto-refresh every 5s
+        </div>
+
+        <div class="grid">
+            <!-- Ali Availability Status -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">👑</span>
+                    <span class="card-title">Grandmaster Ali Status</span>
+                    <span class="status-badge" id="ali-status-badge">LOADING...</span>
+                </div>
+                <div class="ali-status" id="ali-status-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Flash Messages -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">⚡</span>
+                    <span class="card-title">Flash Messages</span>
+                </div>
+                <div id="flash-messages">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Active Agents -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🤖</span>
+                    <span class="card-title">Active Agents</span>
+                    <span class="status-badge status-active" id="active-count">0</span>
+                </div>
+                <div class="agent-list" id="active-agents">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Standby Agents -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">💤</span>
+                    <span class="card-title">Standby Agents</span>
+                    <span class="status-badge status-standby" id="standby-count">0</span>
+                </div>
+                <div class="agent-list" id="standby-agents">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Missions -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🎯</span>
+                <span class="card-title">Active Missions</span>
+            </div>
+            <div id="missions">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- System Stats -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">📊</span>
+                <span class="card-title">System Statistics</span>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="stat-total-agents">0</div>
+                    <div class="stat-label">Total Agents</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="stat-missions">0</div>
+                    <div class="stat-label">Active Missions</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="stat-ratio">N/A</div>
+                    <div class="stat-label">Builder Ratio</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Agent Life Force System v3.1.0 • Constitutional Governance Framework<br>
+            Last CIP Implementation: 2025-11-11 • Emergency Procedures Active
+        </footer>
+    </div>
+
+    <script>
+        // Configuration
+        const REFRESH_INTERVAL = 5000; // 5 seconds
+        const BASE_PATH = '/home/user/demolition-man';
+
+        // Dashboard state
+        let dashboard = {
+            agents: { active: [], standby: [] },
+            missions: [],
+            aliStatus: 'AVAILABLE',
+            flashMessages: { critical: [], info: [] },
+            stats: { builders: 0, librarians: 0, compliant: true }
+        };
+
+        // Fetch and parse state.json
+        async function fetchMissionControlState() {
+            try {
+                // In real implementation, this would fetch from a local server
+                // For now, we'll use mock data that would be populated from actual files
+
+                // Mock data structure - in production this would read from state.json
+                const mockState = {
+                    mission_control_id: "48707",
+                    status: "OPERATIONAL",
+                    active_missions: [
+                        {
+                            mission_id: "M-001",
+                            name: "Constitutional Gap Resolution",
+                            status: "IN_PROGRESS",
+                            progress: "100%"
+                        }
+                    ],
+                    flash_messages: {
+                        critical: [],
+                        info: [
+                            "✅ All 5 CIPs successfully implemented",
+                            "📜 Constitution updated to v3.1.0",
+                            "🔄 Emergency procedures operational"
+                        ]
+                    },
+                    agent_status: {
+                        active: [],
+                        standby: [
+                            {
+                                agent_id: "AGENT-00001",
+                                gender: "broski",
+                                role: "Builder",
+                                rating: 0.0,
+                                sessions: 0,
+                                status: "STANDBY"
+                            },
+                            {
+                                agent_id: "AGENT-00002",
+                                gender: "homeslice",
+                                role: "Adjudicator",
+                                rating: 0.0,
+                                sessions: 1,
+                                status: "STANDBY"
+                            }
+                        ],
+                        ratio: {
+                            builders: 0,
+                            librarians: 0,
+                            compliant: true
+                        }
+                    },
+                    ali_status: {
+                        status: "AVAILABLE",
+                        last_response: "2025-11-10",
+                        hours_since: 1
+                    }
+                };
+
+                return mockState;
+            } catch (error) {
+                console.error('Failed to fetch state:', error);
+                return null;
+            }
+        }
+
+        // Render Ali Status
+        function renderAliStatus(aliData) {
+            const container = document.getElementById('ali-status-container');
+            const badge = document.getElementById('ali-status-badge');
+
+            const statusColors = {
+                'AVAILABLE': { emoji: '🟢', color: '#4ade80', class: 'status-available' },
+                'DELAYED': { emoji: '🟡', color: '#fbbf24', class: 'status-delayed' },
+                'UNAVAILABLE': { emoji: '🟠', color: '#fb923c', class: 'status-unavailable' },
+                'EXTENDED': { emoji: '🔴', color: '#ef4444', class: 'status-extended' }
+            };
+
+            const statusInfo = statusColors[aliData.status] || statusColors['AVAILABLE'];
+
+            badge.textContent = aliData.status;
+            badge.className = `status-badge ${statusInfo.class}`;
+
+            container.innerHTML = `
+                <div class="ali-indicator" style="color: ${statusInfo.color}">
+                    ${statusInfo.emoji}
+                </div>
+                <div class="ali-details">
+                    <div class="ali-label">Last Response</div>
+                    <div class="ali-time">${aliData.last_response} (${aliData.hours_since}h ago)</div>
+                </div>
+            `;
+        }
+
+        // Render Flash Messages
+        function renderFlashMessages(messages) {
+            const container = document.getElementById('flash-messages');
+
+            const allMessages = [
+                ...messages.critical.map(m => ({ text: m, type: 'critical' })),
+                ...messages.info.map(m => ({ text: m, type: 'info' }))
+            ];
+
+            if (allMessages.length === 0) {
+                container.innerHTML = '<div class="empty-state">No active messages</div>';
+                return;
+            }
+
+            container.innerHTML = allMessages.map(msg => `
+                <div class="flash-message ${msg.type === 'info' ? 'info' : ''}">
+                    ${msg.text}
+                </div>
+            `).join('');
+        }
+
+        // Render Agents
+        function renderAgents(agents, containerId) {
+            const container = document.getElementById(containerId);
+
+            if (agents.length === 0) {
+                container.innerHTML = '<div class="empty-state">No agents in this status</div>';
+                return;
+            }
+
+            container.innerHTML = agents.map(agent => {
+                const lifeForcePercent = agent.rating ? (agent.rating / 5.0) * 100 : 0;
+
+                return `
+                    <div class="agent-item ${agent.gender}">
+                        <div class="agent-header">
+                            <span class="agent-id">${agent.agent_id}</span>
+                            <span class="agent-gender">(${agent.gender})</span>
+                            <span class="agent-role">${agent.role}</span>
+                        </div>
+                        <div class="agent-info">
+                            <span>⭐ Rating: ${agent.rating.toFixed(1)}</span>
+                            <span>📅 Sessions: ${agent.sessions}</span>
+                            <span>🔋 Life Force: ${lifeForcePercent.toFixed(0)}%</span>
+                        </div>
+                        <div class="life-force-bar">
+                            <div class="life-force-fill" style="width: ${lifeForcePercent}%"></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Render Missions
+        function renderMissions(missions) {
+            const container = document.getElementById('missions');
+
+            if (missions.length === 0) {
+                container.innerHTML = '<div class="empty-state">No active missions</div>';
+                return;
+            }
+
+            container.innerHTML = missions.map(mission => `
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <span class="mission-id">[${mission.mission_id}]</span>
+                        <span class="mission-name">${mission.name}</span>
+                        <span class="mission-progress">${mission.progress}</span>
+                    </div>
+                    <div style="font-size: 0.8rem; color: #9ca3af; margin-top: 5px;">
+                        Status: ${mission.status}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update Statistics
+        function updateStatistics(state) {
+            const totalAgents = state.agent_status.active.length + state.agent_status.standby.length;
+            document.getElementById('stat-total-agents').textContent = totalAgents;
+            document.getElementById('stat-missions').textContent = state.active_missions.length;
+
+            const ratio = state.agent_status.ratio;
+            const ratioText = ratio.librarians > 0
+                ? `${ratio.builders}:${ratio.librarians}`
+                : 'N/A';
+            document.getElementById('stat-ratio').textContent = ratioText;
+
+            document.getElementById('active-count').textContent = state.agent_status.active.length;
+            document.getElementById('standby-count').textContent = state.agent_status.standby.length;
+        }
+
+        // Main refresh function
+        async function refreshDashboard() {
+            const state = await fetchMissionControlState();
+
+            if (!state) {
+                console.error('Failed to load state');
+                return;
+            }
+
+            renderAliStatus(state.ali_status);
+            renderFlashMessages(state.flash_messages);
+            renderAgents(state.agent_status.active, 'active-agents');
+            renderAgents(state.agent_status.standby, 'standby-agents');
+            renderMissions(state.active_missions);
+            updateStatistics(state);
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            refreshDashboard();
+            setInterval(refreshDashboard, REFRESH_INTERVAL);
+        });
+
+        // Note: In production, this would connect to a WebSocket or local file server
+        // For now, it uses mock data. To make it truly real-time, you would:
+        // 1. Create a simple Node.js/Python server that serves state.json
+        // 2. Update fetch calls to pull from that server
+        // 3. Optionally add WebSocket support for instant updates
+    </script>
+</body>
+</html>
