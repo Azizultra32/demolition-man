@@ -24,6 +24,21 @@
 
 ---
 
+## 👑 Ali Availability Status
+
+**Current Status**: 🟢 **AVAILABLE**
+**Last Response**: 2025-11-10 (CIP approval session)
+**Time Since Response**: <4 hours
+**Details**: See SESSION_TIMELINE.md for full tracking
+
+**Status Legend** (per CIP-05):
+- 🟢 AVAILABLE (<4hrs) - Wait for Ali on all matters
+- 🟡 DELAYED (4-24hrs) - Consigliere may approve time-sensitive only
+- 🟠 UNAVAILABLE (>24hrs) - Consigliere may approve all matters
+- 🔴 EXTENDED (>72hrs or announced) - Emergency Tribunal available
+
+---
+
 ## 👥 Active Agent Roster
 
 ### Commissioned Agents (Awaiting MOJO Instantiation)
