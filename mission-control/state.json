@@ -1,0 +1,61 @@
+{
+  "mission_control_id": "48707",
+  "last_updated": "2025-11-11T21:08:54Z",
+  "status": "OPERATIONAL",
+  "active_missions": [
+    {
+      "mission_id": "ALPHA",
+      "name": "Foundation Engineering",
+      "owner": "Anunnaki God Agent",
+      "status": "IN_PROGRESS",
+      "priority": "CRITICAL",
+      "started": "2025-11-10T10:00:00Z",
+      "progress": "60%",
+      "tasks_completed": 7,
+      "tasks_total": 10,
+      "door_ids": [
+        "Door-01"
+      ],
+      "blockers": []
+    }
+  ],
+  "flash_messages": {
+    "critical": [],
+    "info": [
+      "Foundation files complete - agents can now clock in per constitution",
+      "AGENT-00001 (Builder BROSKI) and AGENT-00002 (Adjudicator HOMESLICE) commissioned and ready",
+      "Operational tooling development in progress",
+      "Mission Control commands operational - mcs, mct, mc created and tested"
+    ]
+  },
+  "agent_status": {
+    "active": [],
+    "standby": [
+      {
+        "agent_id": "AGENT-00001",
+        "role": "builder",
+        "gender": "broski",
+        "status": "standby",
+        "rating": 0.0,
+        "sessions": 0
+      },
+      {
+        "agent_id": "AGENT-00002",
+        "role": "adjudicator",
+        "gender": "homeslice",
+        "status": "standby",
+        "rating": 0.0,
+        "sessions": 0
+      }
+    ],
+    "ratio": {
+      "builders": 0,
+      "librarians": 0,
+      "ratio_status": "N/A (pre-launch)",
+      "ratio_limit": "3:1",
+      "compliant": true
+    }
+  },
+  "pending_briefings": [],
+  "temporary_approvals": []
+}

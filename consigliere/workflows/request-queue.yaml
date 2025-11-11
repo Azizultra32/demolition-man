@@ -1,0 +1,17 @@
+# Consigliere Request Queue
+# Agents submit requests for Grandmaster Ali approval here
+# The Consigliere consolidates these into briefings
+
+pending_requests: []
+# Format:
+# - request_id: "REQ-YYYY-MM-DD-NN"
+#   submitted_by: "AGENT-##### (role)"
+#   submitted_at: "YYYY-MM-DDTHH:MM:SSZ"
+#   type: "constitutional_amendment | new_role | architecture_decision | dispute_resolution | procurement_approval"
+#   urgency: "emergency | high | medium | low"
+#   summary: "Brief description"
+#   details: "Full request text or reference to file"
+#   status: "pending | in_briefing | approved | denied | escalated"
+
+completed_requests: []
+# Requests move here after Ali decision

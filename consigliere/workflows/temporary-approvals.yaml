@@ -1,0 +1,23 @@
+# Consigliere Temporary Approval Tracker
+# Tracks 48-hour temporary approvals and next-session expirations
+
+active_approvals: []
+# Format:
+# - approval_id: "TEMP-YYYY-MM-DD-NN"
+#   issued_by: "The Consigliere (Session N)"
+#   issued_to: "AGENT-##### (role)"
+#   issue_timestamp: "YYYY-MM-DDTHH:MM:SSZ"
+#   expiration_type: "48_hours | next_session"
+#   calculated_expiration: "YYYY-MM-DDTHH:MM:SSZ"
+#   request_summary: "Brief description of what was approved"
+#   conditions:
+#     - "Agent MUST: [requirement]"
+#     - "Agent MUST NOT: [prohibition]"
+#   rollback_plan: "If Ali denies retroactively: [action]"
+#   status: "in_effect | expired | ali_approved | ali_denied"
+
+expired_approvals: []
+# Approvals move here after expiration, awaiting Ali retroactive review
+
+ali_reviewed: []
+# Final outcomes after Ali review
