@@ -4,6 +4,10 @@
 
 This is the **Agent Life Force System** - a governance and coordination framework for managing persistent AI agent identities across multiple work sessions. Think of it as an "operating system" for AI agent teams working on complex, long-term projects.
 
+**IMPORTANT:** This project was originally developed as part of ArkPass development but has now been **separated out with clarity**. The Agent Life Force System is a **standalone governance framework** that can be used for any project, not just ArkPass.
+
+⚠️ **If you see ArkPass product content mixed into this repository, flag it.** This repo is for the agent coordination system itself, NOT the ArkPass product. ArkPass lives in Door-02 (`/Users/ali/october-arkpass`).
+
 ## What We're Building
 
 **Core System:**
@@ -30,6 +34,20 @@ This is the **Agent Life Force System** - a governance and coordination framewor
 - **Consigliere** - Routes all escalations to Grandmaster Ali
 - **Constitution Keeper** - Manages constitutional improvements
 - **Twins A & B** - UI/UX specialists (competitive development)
+
+## Repository Scope (CRITICAL)
+
+**This repository (Door-01: demolition-man):**
+- ✅ Agent Life Force System governance framework
+- ✅ Constitutional infrastructure
+- ✅ Agent coordination tooling
+- ✅ Mission Control systems
+- ❌ **NOT** ArkPass product code
+- ❌ **NOT** ArkPass FHIR/PHR implementation
+
+**ArkPass product work belongs in Door-02** (`/Users/ali/october-arkpass`)
+
+If ArkPass product content appears here, it's a mistake from early development when these weren't separated.
 
 ## Where to Start (New AI Reading This)
 
