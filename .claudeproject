@@ -1,0 +1,94 @@
+# Agent Life Force System - demolition-man
+
+## What This Project Is
+
+This is the **Agent Life Force System** - a governance and coordination framework for managing persistent AI agent identities across multiple work sessions. Think of it as an "operating system" for AI agent teams working on complex, long-term projects.
+
+## What We're Building
+
+**Core System:**
+- Persistent agent identities (GENOME + MOJO = living agents)
+- Constitutional governance (rules, procedures, accountability)
+- Multi-agent coordination (Builders, Librarians, Adjudicators, etc.)
+- Task tracking and mission management
+- Documentation that never becomes orphaned or forgotten
+
+**The Goal:** Enable AI agents to work together over weeks/months without losing context, duplicating work, or creating governance chaos. Every agent has a persistent identity, performance history, and clear role.
+
+## How It Works
+
+**Three Core Concepts:**
+
+1. **GENOME (DNA)** - Unchanging class directives for each agent type (Builder, Librarian, etc.)
+2. **MOJO (Individual Identity)** - Personal history, ratings, memories for each specific agent
+3. **Active Orders (RNA)** - Current missions and tasks that change session-to-session
+
+**Agent Types:**
+- **Builder (BROSKI)** - Executes implementation tasks
+- **Librarian (HOMESLICE)** - Maintains documentation, prevents context loss
+- **Adjudicator (HOMESLICE)** - Enforces rules, resolves disputes
+- **Consigliere** - Routes all escalations to Grandmaster Ali
+- **Constitution Keeper** - Manages constitutional improvements
+- **Twins A & B** - UI/UX specialists (competitive development)
+
+## Where to Start (New AI Reading This)
+
+**CRITICAL: Read these files IN ORDER before doing anything:**
+
+1. **CURRENT_STATUS.md** - Current state snapshot (version 3.2.0)
+2. **ARKPASS_DEV_TENET_PRIME.md** - The Constitution (rules and structure)
+3. **handoffs/HANDOFF-2025-11-12-ANUNNAKI.md** - Latest session context
+4. **logs/2025-11-12.md** - Today's work log (if it exists)
+
+**If there's a recent handoff file, START THERE FIRST.**
+
+## Current Project State
+
+**Status:** 🟢 OPERATIONAL - System built, governance validated, ready for production missions
+
+**Commissioned Agents:**
+- AGENT-00001 (Builder BROSKI) - on standby
+- AGENT-00002 (Adjudicator HOMESLICE) - on standby
+- AGENT-00003 (Librarian HOMESLICE) - 1 session complete, 4.75/5.0 rating
+
+**Recent Work:**
+- Foundation engineering complete
+- Constitutional governance v3.1.0 operational
+- Governance system validated (GREEN LIGHT)
+- Task lifecycle tracking implemented
+- Awaiting production mission assignment
+
+## Key Principles (Grandmaster Ali's Rules)
+
+1. **Two-part answers** - Every recommendation needs (1) immediate fix + (2) systemic prevention
+2. **Deletion paranoia** - Large deletions are 75% likely mistakes, require explanation
+3. **No orphaned files** - All documentation must be in active workflows
+4. **Active work hours > calendar time** - System operates on usage hours, not dates
+5. **Minimal tokens** - Be concise, no unnecessary explanation
+6. **Two is one, one is none** - Redundancy for redundancy (triple backup mindset)
+
+## What We're Working On Now
+
+**Immediate priorities:**
+- Create ACTIVE_ORDERS.md (DNA/RNA/Protein separation)
+- Create DOCUMENTATION_INDEX.md (anti-orphan framework)
+- Define missing agent roles (Enforcement Agent, Code Review Agent)
+- Commission Consigliere (AGENT-00004)
+
+**See handoffs/HANDOFF-2025-11-12-ANUNNAKI.md for complete current context.**
+
+## How to Continue Work
+
+1. Read the handoff file (most recent one in handoffs/)
+2. Check CURRENT_STATUS.md for current state
+3. Review pending decisions and blockers
+4. Ask Grandmaster Ali for guidance if unclear
+5. Update coordination files (CURRENT_STATUS, daily log, TASK_REGISTRY) as you work
+6. Commit and push changes regularly
+7. Create new handoff when session ends or context fills
+
+---
+
+**This project uses sophisticated AI coordination. Don't improvise - follow the constitution and existing patterns.**
+
+**Questions? Ask Grandmaster Ali before making architectural decisions.**
