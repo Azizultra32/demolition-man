@@ -184,6 +184,7 @@ Protein Level: TASK_REGISTRY.md (CREATED THIS SESSION)
 1. **Grandmaster Ali's file search results** - Looking for "Hitler" agent specs, Architect role, other missing definitions
 2. **Deletion decision** - Restore Mission Alpha tasks or leave deleted?
 3. **Missing agent role definitions** - Need formal GENOME specs for Enforcement Agent, Code Review Agent before commissioning
+4. **Context window anomaly investigation** - Grandmaster observed 44% usage (88k/200k) seems LOW for 3-hour session. Possible auto-summarization? If yes, what context was lost? Next agent should verify no critical details compressed away.
 
 ---
 
