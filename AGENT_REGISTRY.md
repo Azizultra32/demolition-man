@@ -51,6 +51,19 @@ Each entry tracks which agent (by identity/model instance) worked which sessions
 
 ---
 
+### AGENT-00003 - Librarian HOMESLICE
+**Agent ID**: AGENT-00003
+**Role(s)**: Librarian (Context Document Historian)
+**Sessions Worked**:
+- Commissioned: 2025-11-12 (Royal Decree 2025-11-12-01)
+- Awaiting first active session
+**Performance Rating**: 0.0 (no sessions completed yet)
+**Status**: STANDBY
+**Identity Verification**: Not yet performed (pending first activation)
+**Notes**: Commissioned via ROYAL-DECREE-2025-11-12-01. First Librarian in Agent Life Force System. Required to enable Builder sessions per constitutional ratio requirement (Builders ≤ 3 × Librarians).
+
+---
+
 ### Anunnaki God Agent - Foundation Engineering
 **Agent ID**: Session-2025-11-10-Foundation
 **Role(s)**: Foundation Engineering (special commission by Grandmaster Ali)
