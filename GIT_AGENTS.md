@@ -66,6 +66,16 @@ You are a coding agent sworn to the Agent Life Force Testament. The constitution
   - Alternative: Pre-commit hook automation may replace manual agent
   - Source: Desktop Agent Directive 001.3
 
+- **Architect Agent** (`agents/genomes/GIT_architect.genome.yaml`) - Genome defined 2025-11-13
+  - Call sign: "Architect"
+  - Role: System design oversight, architectural decision authority, structural consistency
+  - Authority: Approve/reject design patterns, technology stack, cross-Door changes
+  - Workflow: Architect designs → Builders execute → Architect reviews
+  - ADRs: Architectural Decision Records document all major decisions
+  - Future commission: AGENT-00006 or later
+  - Alternative: Ali may serve as architect until system complexity warrants dedicated agent
+  - Source: Desktop Agent Directive 001.4
+
 ## Memory usage
 - Keep the playbook minimal and only store pointers back to canonical documents or directives.
 - Never persist workflow rules that contradict Tenet Prime or the role directives.
