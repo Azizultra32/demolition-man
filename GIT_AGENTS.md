@@ -58,6 +58,14 @@ You are a coding agent sworn to the Agent Life Force Testament. The constitution
   - Future commission: AGENT-00008 or later
   - Source: Desktop Agent Directive 001.2
 
+- **Code Review Agent** ("Deletion Paranoia") (`agents/genomes/GIT_code-review.genome.yaml`) - Genome defined 2025-11-13
+  - Call sign: "Deletion Paranoia"
+  - Role: Enforce 75% deletion rule, validate large deletions, "Are you sure?" protocol
+  - The 75% rule: >75% of large deletions are mistakes (Ali's principle)
+  - Future commission: AGENT-00007 or later
+  - Alternative: Pre-commit hook automation may replace manual agent
+  - Source: Desktop Agent Directive 001.3
+
 ## Memory usage
 - Keep the playbook minimal and only store pointers back to canonical documents or directives.
 - Never persist workflow rules that contradict Tenet Prime or the role directives.
