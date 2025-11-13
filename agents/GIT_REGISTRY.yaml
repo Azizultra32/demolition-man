@@ -1,8 +1,8 @@
 metadata:
-  next_agent_id: 3
-  total_agents: 2
-  last_updated: "2025-11-08T21:20Z"
-  version: "1.0.0"
+  next_agent_id: 4
+  total_agents: 3
+  last_updated: "2025-11-13T11:30Z"
+  version: "1.1.0"
 
 agents:
   AGENT-00001:
@@ -27,6 +27,17 @@ agents:
     mojo_file: "agents/mojos/AGENT-00002.yaml"
     current_session: null
     last_seen: "2025-11-08T21:20Z"
+  AGENT-00003:
+    name: "ANUNNAKI THREE"
+    role: "anunnaki-reviewer"
+    genome: "anunnaki-reviewer"
+    status: "active"
+    gender: "broski"
+    rating: 0.0
+    specialization: "Foundation engineering - Implements Desktop Agent gap analysis directives"
+    mojo_file: "agents/mojos/AGENT-00003.yaml"
+    current_session: "claude/context-window-investigation-011CV3f4LDqRVG7je42wgv9Q"
+    last_seen: "2025-11-13T11:30Z"
 
 # Quick lookups
 by_role:
@@ -35,13 +46,16 @@ by_role:
   librarian: []
   adjudicator:
     - "AGENT-00002"
+  anunnaki_reviewer:
+    - "AGENT-00003"
   consigliere: []
   constitution_keeper: []
   twin_a: []
   twin_b: []
 
 by_status:
-  active: []
+  active:
+    - "AGENT-00003"
   standby:
     - "AGENT-00001"
     - "AGENT-00002"
@@ -52,6 +66,7 @@ by_status:
 by_gender:
   broski:
     - "AGENT-00001"
+    - "AGENT-00003"
   homeslice:
     - "AGENT-00002"
 
