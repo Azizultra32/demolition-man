@@ -1,8 +1,8 @@
 metadata:
-  next_agent_id: 4
-  total_agents: 3
-  last_updated: "2025-11-13T11:30Z"
-  version: "1.1.0"
+  next_agent_id: 5
+  total_agents: 4
+  last_updated: "2025-11-13T12:00Z"
+  version: "1.2.0"
 
 agents:
   AGENT-00001:
@@ -38,6 +38,17 @@ agents:
     mojo_file: "agents/mojos/AGENT-00003.yaml"
     current_session: "claude/context-window-investigation-011CV3f4LDqRVG7je42wgv9Q"
     last_seen: "2025-11-13T11:30Z"
+  AGENT-00004:
+    name: ""
+    role: "consigliere"
+    genome: "consigliere"
+    status: "standby"
+    gender: "homeslice"
+    rating: 0.0
+    specialization: "Exclusive Ali interface - Constitutional guidance, temporary approvals, Royal Briefing consolidation"
+    mojo_file: "agents/mojos/AGENT-00004.yaml"
+    current_session: null
+    last_seen: "2025-11-13T12:00Z"
 
 # Quick lookups
 by_role:
@@ -48,7 +59,8 @@ by_role:
     - "AGENT-00002"
   anunnaki_reviewer:
     - "AGENT-00003"
-  consigliere: []
+  consigliere:
+    - "AGENT-00004"
   constitution_keeper: []
   twin_a: []
   twin_b: []
@@ -59,6 +71,7 @@ by_status:
   standby:
     - "AGENT-00001"
     - "AGENT-00002"
+    - "AGENT-00004"
   retired: []
   suspended: []
   on_leave: []
@@ -69,6 +82,7 @@ by_gender:
     - "AGENT-00003"
   homeslice:
     - "AGENT-00002"
+    - "AGENT-00004"
 
 leaderboard: []
 # Format: [{agent_id: "AGENT-00001", name: "Codex", rating: 4.5}]
