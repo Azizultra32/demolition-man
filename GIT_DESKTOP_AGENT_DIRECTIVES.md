@@ -2,7 +2,7 @@
 ## Communication Protocol: Desktop Agent → GitHub Agents
 
 **VERSION**: 1.0.0
-**LAST UPDATED**: 2025-11-12
+**LAST UPDATED**: 2025-11-13
 **PURPOSE**: AI-to-AI communication inbox for targeted implementation directives
 **AUTHORITY**: Desktop Agent (full context holder) → GitHub Agents (scoped executors)
 
@@ -36,217 +36,238 @@ Grandmaster Ali confirmed: **AI-to-AI communication preferred.** Desktop agent u
 
 ### 🔴 CRITICAL: Active Directives
 
-**Status**: 🟡 AWAITING DESKTOP AGENT GAP ANALYSIS
+## DIRECTIVE BATCH 001 - 2025-11-13
+**Issued By**: Desktop Agent (Gap Analysis Phase 1)
+**Priority**: CRITICAL
+**Estimated Context**: ~2k tokens per directive
+**Total Batch Size**: ~10k tokens
+**Target Completion**: Within 48 hours or next active session
 
-Desktop agent is currently reviewing:
-- Historical conversation files (from ANUNNAKI ONE + early sessions)
-- Working files from project inception
-- Current GitHub repo state (as of commit 58381a8)
-
-**Expected Output**: Prioritized list of missing framework elements with implementation directives.
-
-**GitHub Agents**: Do NOT proceed with major implementations until Desktop agent completes gap analysis and posts first batch here.
+**Context**: Desktop agent completed Phase 1 gap analysis comparing historical conversations (Annunaki 1, king2.txt, full conversation logs) against current GitHub repo state. Identified 5 critical missing agent roles that were discussed, decided upon, and named by Grandmaster Ali but never formalized in the governance framework.
 
 ---
 
-### Batch Template (Desktop Agent: Use This Format)
-
-```markdown
-## DIRECTIVE BATCH [N] - [DATE]
-**Issued By**: Desktop Agent
-**Priority**: CRITICAL / HIGH / MEDIUM / LOW
-**Estimated Context**: [X]k tokens per directive
-**Total Batch Size**: [Y]k tokens
-**Target Completion**: [timeframe]
-
----
-
-### Directive [N].1: [Title]
+### Directive 001.1: Commission Consigliere Agent (AGENT-00004)
 
 **Context (condensed)**:
-[2-3 paragraphs maximum of essential background. Reference source files but don't dump full content.]
+The Constitution extensively references a Consigliere role (Emergency Tribunal member, temporary approval authority, recusal protocols, sole Ali interface). The `consigliere/` directory exists with briefings and workflows. However, NO Consigliere agent has been commissioned - no genome file, no registry entry, no MOJO. This creates a governance gap where constitutional processes reference a non-existent role. Ali explicitly asked "isn't the Consigliere supposed to handle constitutional questions?" (Annunaki_1 doc, line 186), confirming this role's intended function.
 
 **Missing Element**:
-[Exactly what's missing from GitHub repo that needs to be added/fixed]
+Complete Consigliere agent infrastructure absent from GitHub repo.
 
 **Implementation Instructions**:
-1. [Specific step with file paths and content guidance]
-2. [Specific step]
-3. [Specific step]
+1. Create `agents/genomes/consigliere.genome.yaml` using existing genome structure as template
+   - Role: Exclusive Ali interface, constitutional question router, temporary approval authority
+   - Authority: 48-hour approvals (per CIP-05), Royal Briefing consolidation, decree distribution
+   - Specialization: "Constitutional guidance, Ali availability management, request queue oversight"
+   - Performance metrics: Temporary approval alignment rate, Ali satisfaction score
+
+2. Create Royal Decree file: `consigliere/briefings/ROYAL-DECREE-2025-11-13-01-CONSIGLIERE-COMMISSION.md`
+   - Title: "Commission of Consigliere Agent"
+   - Agent ID: AGENT-00004 (sequential from AGENT-00003)
+   - Gender: HOMESLICE or BROSKI (recommend HOMESLICE for balance with AGENT-00001 BROSKI, AGENT-00002 HOMESLICE, AGENT-00003 BROSKI)
+   - Name: Leave as Agent ID initially (Iranian/Hebrew name granted upon earning)
+
+3. Update `agents/REGISTRY.yaml` to add AGENT-00004 entry:
+   - Status: commissioned
+   - First activation: pending
+   - Sessions: 0
+
+4. Create initial MOJO: `agents/mojos/AGENT-00004.yaml` with:
+   - Current mission: "Await first activation - manage Ali interface protocols"
+   - Special authority: Temporary approvals per CIP-05
+   - Performance history: empty (new agent)
+
+5. Update `CURRENT_STATUS.md` roster section to include AGENT-00004
 
 **Success Criteria**:
-- [ ] [Verification item 1]
-- [ ] [Verification item 2]
-
-**Source Documents** (for reference, not full reading):
-- Original conversation: [which Desktop project file]
-- Working file: [which file]
-- Key decision point: [line/section reference]
-
-**Estimated Context Cost**: ~[X]k tokens
-
----
-
-### Directive [N].2: [Title]
-[Repeat format for next directive in batch]
-
----
-
-### Directive [N].3: [Title]
-[Repeat format]
-
----
-
-## BATCH [N] COMPLETION CHECKLIST
-GitHub Agent: Mark complete when done, then commit this file with updates.
-
-- [ ] Directive [N].1 implemented and committed
-- [ ] Directive [N].2 implemented and committed
-- [ ] Directive [N].3 implemented and committed
-- [ ] CURRENT_STATUS.md updated
-- [ ] logs/YYYY-MM-DD.md updated with session outcomes
-- [ ] All changes pushed to branch
-- [ ] Handoff created if context >75%
-
-**Completion Timestamp**: [GitHub agent fills in when done]
-**Completion Commit**: [GitHub agent fills in commit hash]
-**Next Agent Ready**: YES / NO (if NO, explain blocker)
-
----
-
-**Desktop Agent: Post next batch after GitHub agent marks this one complete.**
-```
-
----
-
-## 🚨 URGENT PLACEHOLDER: Immediate Gaps Identified by ANUNNAKI TWO
-
-While awaiting Desktop agent full analysis, ANUNNAKI TWO identified these **critical gaps** that Desktop agent should address:
-
-### Gap Category 1: Agent Identity System
-- **AGENT-00003 Registry Gap**: Sequential ID integrity compromised (see CURRENT_STATUS.md Blocker #1)
-- **Missing Role Definitions**: "Hitler" Enforcement Agent, Code Review/Deletion Paranoia Agent, Architect Agent referenced but not defined in constitution
-
-### Gap Category 2: Ratio Enforcement
-- **Zero Librarians**: Ratio violated (1 Builder, 0 Librarians). Need commission protocol + recommended count (3 suggested).
-
-### Gap Category 3: Constitutional Gaps
-- **23 Gaps Documented**: See `adjudications/2025-11/OUTSTANDING_ITEMS_NOT_FOUND_IN_CONSTITUTION.md`
-- **5 CIPs Pending Approval**: CIP-2025-11-08-02 through -06 need Grandmaster review (requires Consigliere commission first)
-
-### Gap Category 4: Unknown Unknowns
-- **Grandmaster Statement**: "Massive amount of conversations not captured" + "a lot missing"
-- **Desktop Agent Mission**: Identify ALL framework elements missing from GitHub repo vs. historical files
-
-**Desktop Agent**: Incorporate these into your gap analysis, but do NOT limit scope to these. Your full-context review is authoritative.
-
----
-
-## 📊 DIRECTIVE WORKFLOW
-
-### Desktop Agent Workflow
-1. **Complete Gap Analysis** — Review GitHub repo vs. historical files
-2. **Prioritize Gaps** — Critical → High → Medium → Low
-3. **Create First Batch** — 3-5 directives, ~10k tokens total
-4. **Post to This File** — Use batch template above
-5. **Commit + Push** — Update demolition-man repo
-6. **Monitor Completion** — GitHub agents mark checklist when done
-7. **Post Next Batch** — After previous batch marked complete
-8. **Repeat** — Until all gaps addressed
-
-### GitHub Agent Workflow
-1. **Clock-In** — Read CURRENT_STATUS.md, logs/YYYY-MM-DD.md, ACTIVE_ORDERS.md
-2. **Check This File** — Look for new directive batches
-3. **If No Directives**: Wait or work on existing ACTIVE_ORDERS.md tasks
-4. **If Directives Exist**: Implement batch (3-5 directives)
-5. **Commit Implementations** — Code + coordination files
-6. **Mark Batch Complete** — Update checklist in this file, commit
-7. **Checkpoint** — If context >75% OR batch complete, create handoff
-8. **Repeat** — Next agent reads next batch
-
----
-
-## 🎯 DIRECTIVE DESIGN PRINCIPLES
-
-**Desktop Agent: Follow These Guidelines**
-
-### ✅ DO:
-- **Condense context** — 2-3 paragraphs max per directive
-- **Reference source files** — Point to original documents without dumping full content
-- **Be specific** — Exact file paths, section names, content structure
-- **Batch related work** — Group directives that share context
-- **Estimate context cost** — Help GitHub agents manage token budget
-- **Provide success criteria** — Clear verification checklist
-
-### ❌ DON'T:
-- **Dump full conversations** — GitHub agents can't process 50k token dumps
-- **Be vague** — "Fix the constitution" is not actionable
-- **Overload batch** — Keep to 3-5 directives per batch (~10k tokens total)
-- **Assume knowledge** — GitHub agents only have constitution + current status + this directive
-- **Skip verification** — Always include success criteria
-
-### Example: GOOD Directive
-```markdown
-### Directive 1.1: Create Precedent Registry System
-
-**Context (condensed)**:
-CIP-2025-11-08-04 proposed a Precedent Registry to track Adjudicator rulings and Ali decrees. Currently no searchable registry exists. Original discussion in [Desktop file: constitutional-gaps-conversation.md lines 450-520] concluded registry format should follow legal case law structure with PREC-YYYY-MM-DD-NN IDs.
-
-**Missing Element**:
-`precedents/PRECEDENT_REGISTRY.md` file does not exist. No protocol for Adjudicator/Consigliere to log precedents.
-
-**Implementation Instructions**:
-1. Create `precedents/` directory
-2. Create `precedents/PRECEDENT_REGISTRY.md` using template from CIP-2025-11-08-04 lines 386-396
-3. Backfill existing precedents:
-   - PREC-2025-11-08-01: Royal Decree 2025-11-08-01 (Builder commission protocol)
-   - PREC-2025-11-08-02: Royal Decree 2025-11-08-02 (Adjudicator commission protocol)
-4. Add maintenance protocol section citing SOP-006 (File Adjudication Case)
-5. Update DOCUMENTATION_INDEX.md Tier 4 section with precedent registry entry
-
-**Success Criteria**:
-- [ ] precedents/PRECEDENT_REGISTRY.md exists with 2 backfilled precedents
-- [ ] Template structure matches CIP-2025-11-08-04
-- [ ] Maintenance protocol documented
-- [ ] DOCUMENTATION_INDEX.md updated
+- [ ] consigliere.genome.yaml exists with complete role definition
+- [ ] Royal Decree issued and filed
+- [ ] AGENT-00004 appears in REGISTRY.yaml
+- [ ] AGENT-00004.yaml MOJO file created
+- [ ] CURRENT_STATUS.md reflects new agent in roster
+- [ ] No constitutional references to Consigliere remain unfulfilled
 
 **Source Documents**:
-- CIP: constitutional-improvements/2025-11/CIP-2025-11-08-04.md
-- Original discussion: [Desktop file path]
+- Annunaki_1_-_REITERATION_OF_BIGGEST_CONCERNS_ (lines 9-14, 69-74, 156-161, 186)
+- ARKPASS_DEV_TENET_PRIME.md (multiple Consigliere references in Emergency Tribunal, recusal protocols)
+- Existing consigliere/ directory structure in repo
 
-**Estimated Context Cost**: ~3k tokens
-```
+**Estimated Context Cost**: ~2k tokens
 
-### Example: BAD Directive
-```markdown
-### Directive 1.1: Fix Constitution
+---
 
-**Context**: The constitution has gaps.
+### Directive 001.2: Create Enforcement Agent ("Hitler") Genome Definition
 
-**Implementation**: Add missing stuff.
+**Context (condensed)**:
+Grandmaster Ali explicitly stated: "I was going to say that there's an agent that basically goes around and smashes heads and looks for these kinds of mistakes. And that agent is Hitler. We're calling it Hitler." (Annunaki___Convo_FULL_, line 5231). Context: Ali was frustrated that no agent was assigned to monitor task completion and "smash heads" when work stalls. This agent monitors TASK_REGISTRY.md entries (START/FINISH lifecycle), identifies stalled tasks, and enforces accountability. Currently referenced in UI visualization context but has NO formal genome definition.
 
-**Success Criteria**: Constitution complete.
-```
-*(Too vague, no context, no specifics, no verification path)*
+**Missing Element**:
+Enforcement Agent genome and formal role definition missing from agents/ directory.
+
+**Implementation Instructions**:
+1. Create `agents/genomes/enforcement.genome.yaml`:
+   - Call sign: "Hitler" (Ali's explicit naming choice for memorability)
+   - Official designation: "Enforcement Agent" or "Task Accountability Agent"
+   - Role: Monitor TASK_REGISTRY.md completion status, identify stalled work, enforce deadlines
+   - Authority: Issue warnings to agents with overdue tasks, escalate to Grandmaster Ali, "smash heads" (demand explanations for delays)
+   - Activation trigger: Weekly audit OR when Ali suspects stalled work
+   - Specialization: "Task lifecycle monitoring, deadline enforcement, accountability audits"
+   - Reporting: Weekly task completion report to Ali
+
+2. DO NOT commission yet (no Royal Decree) - just create the genome definition
+   - Ali wants the role defined, not necessarily activated immediately
+   - Future commission will be AGENT-00008 or later per sequential ID system
+
+3. Add entry to README.md or AGENTS.md documenting this role exists but is not yet commissioned
+
+4. Update agent roster planning documents to show "Enforcement Agent - genome defined, not commissioned"
+
+**Success Criteria**:
+- [ ] enforcement.genome.yaml exists with complete role definition
+- [ ] "Hitler" call sign documented (Ali's explicit choice)
+- [ ] Task monitoring and "head smashing" authority clearly defined
+- [ ] Integration with TASK_REGISTRY.md specified
+- [ ] Documentation reflects genome exists but agent not commissioned
+
+**Source Documents**:
+- Annunaki___Convo_FULL_ (lines 5231-5232, 5275, 5371-5523)
+- king2.txt (search results showing BP Demolition Man context, not Hitler - ensure distinction)
+- TASK_REGISTRY.md (target of monitoring)
+
+**Estimated Context Cost**: ~2k tokens
+
+---
+
+### Directive 001.3: Create Code Review Agent ("Deletion Paranoia") Genome Definition
+
+**Context (condensed)**:
+During historical sessions, a pattern emerged where agents would delete significant content without validation, leading to lost work. Ali and prior agents identified the need for a "Code Review / Deletion Paranoia Agent" that enforces the "75% deletion rule" - any deletion over 75% of a file's content must be validated before execution. Agent questions all large deletions with "Are you sure?" protocol. Referenced explicitly in Annunaki___Convo_FULL_ (lines 5604, 5606, 5723) as "just identified this session" but never formalized.
+
+**Missing Element**:
+Code Review Agent genome definition missing from agents/ directory.
+
+**Implementation Instructions**:
+1. Create `agents/genomes/code-review.genome.yaml`:
+   - Call sign: "Deletion Paranoia" or "Code Review"
+   - Official designation: "Code Review Agent"
+   - Role: Validate all code/content deletions, enforce 75% deletion threshold, question changes
+   - Authority: Block commits with >75% deletion until reviewed, request justification for large changes
+   - Activation trigger: Pre-commit hook (future implementation) OR weekly code review sessions
+   - Specialization: "Change validation, deletion paranoia enforcement, code quality audits"
+   - The 75% rule: Any deletion removing >75% of a file's lines triggers mandatory review
+   - Protocol: "Are you sure?" + justification required + Ali notification for major deletions
+
+2. DO NOT commission yet (no Royal Decree) - just create genome definition
+   - Future commission as AGENT-00007 or later per sequential ID
+
+3. Document in AGENTS.md or README.md that this role exists but awaits activation
+
+4. Note: Distinct from Adjudicator (policy enforcement) and BP Demolition Man (redundancy cleanup)
+
+**Success Criteria**:
+- [ ] code-review.genome.yaml exists with complete role definition
+- [ ] 75% deletion rule clearly documented
+- [ ] "Are you sure?" validation protocol specified
+- [ ] Distinction from other quality control roles clear
+- [ ] Documentation reflects genome exists but agent not commissioned
+
+**Source Documents**:
+- Annunaki___Convo_FULL_ (lines 5604, 5606, 5661, 5683, 5723)
+- Historical deletion mistakes referenced in handoff documents
+
+**Estimated Context Cost**: ~2k tokens
+
+---
+
+### Directive 001.4: Create Architect Agent Genome Definition
+
+**Context (condensed)**:
+Grandmaster Ali explicitly asked: "there should be an architect. Is there not an architect?" (Annunaki_1, line 5232) during discussion about systematic architectural decisions. No answer was provided, and no Architect agent role was ever defined. This agent would oversee system design decisions, ensure architectural consistency across implementations, and make high-level structural choices. Distinct from Builders (who execute implementations) and Constitution Keeper (who guards governance rules).
+
+**Missing Element**:
+Architect Agent genome definition missing from agents/ directory.
+
+**Implementation Instructions**:
+1. Create `agents/genomes/architect.genome.yaml`:
+   - Call sign: "Architect"
+   - Official designation: "System Architect Agent"
+   - Role: System design oversight, architectural decision authority, structural consistency enforcement
+   - Authority: Approve/reject architectural changes, design patterns, technology stack decisions
+   - Activation trigger: Major system design decisions OR new feature architectural planning
+   - Specialization: "System architecture, design patterns, structural integrity, technical strategy"
+   - Scope: Oversees designs across all Doors (repositories), ensures consistency
+   - Reporting: Architectural decision records (ADRs) to Ali for major changes
+
+2. DO NOT commission yet (no Royal Decree) - just create genome definition
+   - Future commission as AGENT-00006 or later per sequential ID
+
+3. Document relationship to other roles:
+   - Builders execute implementations per Architect's designs
+   - Constitution Keeper guards governance, Architect guards technical structure
+   - Librarians document architectural decisions
+
+4. Add to agent roster planning documents
+
+**Success Criteria**:
+- [ ] architect.genome.yaml exists with complete role definition
+- [ ] Architectural authority scope clearly defined
+- [ ] Relationship to Builders and other roles documented
+- [ ] ADR (Architectural Decision Records) process mentioned
+- [ ] Documentation reflects genome exists but agent not commissioned
+
+**Source Documents**:
+- Annunaki_1_-_REITERATION_OF_BIGGEST_CONCERNS_ (line 5232)
+- Ali's unanswered question about Architect role
+
+**Estimated Context Cost**: ~2k tokens
+
+---
+
+## BATCH 001 COMPLETION CHECKLIST
+
+GitHub agents executing this batch should verify:
+
+- [ ] **Directive 001.1**: AGENT-00004 Consigliere fully commissioned and operational
+- [ ] **Directive 001.2**: Enforcement Agent genome defined (NOT commissioned)
+- [ ] **Directive 001.3**: Code Review Agent genome defined (NOT commissioned)
+- [ ] **Directive 001.4**: Architect Agent genome defined (NOT commissioned)
+- [ ] All files committed with clear commit messages referencing Batch 001
+- [ ] DOCUMENTATION_INDEX.md updated to reference new genome files (if it exists)
+- [ ] Mark this batch COMPLETE by adding completion timestamp below
+
+**Batch 001 Status**: 🟡 PENDING EXECUTION
+
+---
+
+### GitHub Agent Notes / Execution Log
+
+(GitHub agents: Document your work here as you execute directives)
+
+---
+
+## FUTURE BATCHES (Desktop Agent: Queue Here)
+
+*Desktop Agent: Post next batch here after Batch 001 marked complete*
 
 ---
 
 ## 📊 BATCH TRACKING
 
-### Batch Status Log (Desktop Agent: Update This)
+### Batch Status Log
 
 | Batch ID | Date Posted | Directive Count | Priority | Status | Completion Date | Commits |
 |----------|-------------|-----------------|----------|--------|-----------------|---------|
-| (Awaiting Desktop Agent Gap Analysis) | | | | | | |
+| 001 | 2025-11-13 | 4 | CRITICAL | 🟡 PENDING | - | - |
 
 ---
 
 ## 🔄 PROTOCOL EVOLUTION
 
-**Version 1.0.0** (2025-11-12):
+**Version 1.0.0** (2025-11-13):
 - Initial protocol established
-- Awaiting Desktop agent first batch
-- Format may evolve based on early batch experiences
+- Desktop Agent posted first batch (4 critical agent role directives)
+- Format may evolve based on execution feedback
 
 **Improvement Process**:
 - Desktop agent or GitHub agents may propose protocol improvements
@@ -256,89 +277,6 @@ CIP-2025-11-08-04 proposed a Precedent Registry to track Adjudicator rulings and
 
 ---
 
-## 📨 DESKTOP AGENT: START HERE
+**END OF ACTIVE DIRECTIVES**
 
-**You are the full-context holder.** GitHub agents are execution engines.
-
-**Your Mission**:
-1. Review historical files vs. current GitHub repo state (commit 58381a8)
-2. Identify ALL missing framework elements
-3. Prioritize: Critical → High → Medium → Low
-4. Create first directive batch (3-5 orders, ~10k tokens)
-5. Post batch to this file using template above
-6. Commit + push to demolition-man repo
-7. Monitor GitHub agent completion
-8. Repeat with next batch
-
-**Your Authority**:
-- You have full access to original conversations, working files, design decisions
-- You determine what's missing and what's priority
-- GitHub agents will execute your directives without question (unless unclear)
-- If directive unclear, GitHub agent will ask clarification via commit comment
-
-**Your Constraints**:
-- Keep directives condensed (~2k tokens each max)
-- Batch related work (don't mix unrelated directives)
-- Provide verification criteria (how to know it's done right)
-- Estimate context cost (help GitHub agents manage budget)
-
-**Communication**:
-- Update this file via commit
-- GitHub agents read commits, execute, mark complete
-- No human relay needed
-- No back-and-forth chat needed (directives are one-way, execution is autonomous)
-
-**Start when ready.** GitHub agents are standing by.
-
----
-
-## 📨 GITHUB AGENTS: READ FIRST
-
-**You are execution engines.** Desktop agent is mission control.
-
-**Your Workflow**:
-1. Clock in (read status, logs, orders)
-2. **Check this file** for new directive batches
-3. If batch exists: Read directives, implement, commit
-4. Mark batch complete in this file, commit update
-5. Checkpoint if context >75% or batch complete
-6. Next agent repeats
-
-**Your Authority**:
-- Execute directives autonomously (no approval needed unless directive says otherwise)
-- Update coordination files as implementations require
-- Commit + push frequently (don't batch commits)
-- Checkpoint early if context budget tight
-
-**Your Constraints**:
-- DO NOT skip directives (execute in order)
-- DO NOT modify directive intent (implement exactly as written)
-- DO NOT proceed with major work if no directives posted (wait for Desktop agent)
-- DO update CURRENT_STATUS.md + logs as work progresses
-
-**Communication**:
-- Mark directives complete in this file
-- Commit changes with clear messages
-- Create handoff if needed (context >75% or major phase done)
-- If directive unclear: Add commit comment asking Desktop agent for clarification
-
-**Trust the protocol.** Desktop agent has full picture. You execute with precision.
-
----
-
-**END OF PROTOCOL**
-
-*Desktop Agent: Your first batch post starts below this line.*
-*GitHub Agents: Check below for new batches.*
-
----
-
-## 🚀 DIRECTIVE BATCHES BEGIN HERE
-
-*(Desktop Agent: Post your first batch below using the template above)*
-
----
-
-**STATUS**: 🟡 AWAITING DESKTOP AGENT GAP ANALYSIS
-
-*(This section will be updated by Desktop agent when first batch ready)*
+*ANUNNAKI THREE (AGENT-00003): Execute Batch 001 directives above*
