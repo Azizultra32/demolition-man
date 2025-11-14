@@ -1,8 +1,8 @@
 metadata:
-  next_agent_id: 5
-  total_agents: 4
-  last_updated: "2025-11-13T12:00Z"
-  version: "1.2.0"
+  next_agent_id: 6
+  total_agents: 5
+  last_updated: "2025-11-14T03:30Z"
+  version: "1.3.0"
 
 agents:
   AGENT-00001:
@@ -33,11 +33,11 @@ agents:
     genome: "anunnaki-reviewer"
     status: "active"
     gender: "broski"
-    rating: 0.0
+    rating: 9.0
     specialization: "Foundation engineering - Implements Desktop Agent gap analysis directives"
     mojo_file: "agents/mojos/AGENT-00003.yaml"
     current_session: "claude/context-window-investigation-011CV3f4LDqRVG7je42wgv9Q"
-    last_seen: "2025-11-13T11:30Z"
+    last_seen: "2025-11-14T03:00Z"
   AGENT-00004:
     name: ""
     role: "consigliere"
@@ -49,12 +49,24 @@ agents:
     mojo_file: "agents/mojos/AGENT-00004.yaml"
     current_session: null
     last_seen: "2025-11-13T12:00Z"
+  AGENT-00005:
+    name: ""
+    role: "librarian"
+    genome: "librarian"
+    status: "commissioned"
+    gender: "broski"
+    rating: 0.0
+    specialization: "General Librarian - Documentation maintenance, SOP execution, Phase 2 validation test"
+    mojo_file: "agents/mojos/AGENT-00005.yaml"
+    current_session: null
+    last_seen: "2025-11-14T03:30Z"
 
 # Quick lookups
 by_role:
   builder:
     - "AGENT-00001"
-  librarian: []
+  librarian:
+    - "AGENT-00005"
   adjudicator:
     - "AGENT-00002"
   anunnaki_reviewer:
@@ -72,6 +84,8 @@ by_status:
     - "AGENT-00001"
     - "AGENT-00002"
     - "AGENT-00004"
+  commissioned:
+    - "AGENT-00005"
   retired: []
   suspended: []
   on_leave: []
@@ -80,9 +94,13 @@ by_gender:
   broski:
     - "AGENT-00001"
     - "AGENT-00003"
+    - "AGENT-00005"
   homeslice:
     - "AGENT-00002"
     - "AGENT-00004"
 
-leaderboard: []
+leaderboard:
+  - agent_id: "AGENT-00003"
+    name: "ANUNNAKI THREE"
+    rating: 9.0
 # Format: [{agent_id: "AGENT-00001", name: "Codex", rating: 4.5}]
