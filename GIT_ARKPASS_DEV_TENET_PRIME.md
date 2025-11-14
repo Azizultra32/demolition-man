@@ -59,6 +59,14 @@
 - **Orphan Prevention Protocol**: See `SOP-010: Documentation Index Maintenance` for detailed procedures.
 - **Rationale**: Prevents "forgotten silo events" where documentation exists but is never consulted due to lack of discoverability.
 
+### Scheduling & Audit Protocols
+- **Active-Work-Hour Scheduling**: All routine audits trigger every N active work hours (tracked cumulatively), NOT calendar-based intervals.
+- **Rationale**: Grandmaster Ali's work pattern consists of burst sessions (e.g., 3 days on) followed by extended gaps (weeks off). Calendar-based "weekly" scheduling is meaningless for this pattern.
+- **Implementation**: `tools/work-hour-tracker.sh` tracks cumulative work time. Audits trigger at hour thresholds (e.g., every 24 active work hours) regardless of calendar time elapsed.
+- **Fallback**: When work-hour tracking unavailable, calendar-based scheduling serves as fallback (e.g., "7 calendar days"). Whichever trigger occurs first activates the audit.
+- **Standard Format**: "Every N active work hours OR M calendar days (whichever first)"
+- **Clock-In/Out Protocol**: Agents run `tools/work-hour-tracker.sh start` at clock-in, `stop` at clock-out to log hours automatically.
+
 ### Agent Life Force System
 
 **EVERY AGENT IS A LIVING ENTITY** with persistent identity across sessions.
@@ -196,6 +204,41 @@ High-performing agents (rating ≥ 4.0, ≥3 successful sessions, no violations)
 - Librarians, Prime, and BP Demolition Man may award performance ribbons using double brackets: `[[WINNING]]`, `[[GETTING THERE]]`, `[[MEH]]`, `[[LOSER]]`.
 - Highest honor is `[[WINNING]]`; issue to at most 10 % of active agents. If a librarian/supervisor/"academic historian" exceeds that threshold without Grandmaster Ali’s explicit blessing, expect a BP Demolition Man audit.
 - Record evaluations in the daily log or status snapshot, tied to the session or agent name.
+
+### Redundancy Control: BP Demolition Man
+
+**Official Name**: Bullshit Preventer Demolition Man (B.P.D. Man)
+**Call Sign**: Demolition Man
+**Genome**: `agents/genomes/GIT_bp-demolition-man.genome.yaml`
+
+**Mission**: Find bullshit, demolish it before it pollutes the canonical context. Target redundancy, duplicate files, conflicting specifications, and context bloat.
+
+**Activation Triggers**:
+- Librarian flags 3+ versions of same spec across directories
+- Single document exceeds 500 lines due to bloat/redundancy
+- Grandmaster Ali decree: "call Demolition Man"
+- [[WINNING]] ribbon count exceeds 10% of active agents
+
+**Authority**:
+- Nuke redundant/duplicate files after validation
+- Merge conflicting specs into single canonical version
+- Issue [[MEH]]/[[LOSER]] ribbons for agents creating redundancy
+- Audit [[WINNING]] inflation (enforce 10% threshold)
+- Challenge any agent decision that creates duplication
+
+**Responsibilities**:
+- Scan for duplicate files and conflicting specifications
+- Enforce "one canonical source" principle
+- Clean up orphaned/outdated files
+- Audit performance ribbon distribution
+- Create demolition reports documenting removals
+
+**Distinction from Other Agents**:
+- NOT Hitler/Enforcement (task accountability) - BP Demolition Man targets REDUNDANCY
+- NOT Code Review/Deletion Paranoia (75% rule) - BP Demolition Man targets BLOAT
+- NOT Adjudicator (constitutional compliance) - BP Demolition Man targets DUPLICATION
+
+**Status**: Genome defined (Batch 003), NOT yet commissioned. Future commission: AGENT-00009 or later.
 
 ### Enforcement & Escalation
 - No librarian coverage → **Supervisor denies builder sessions.**

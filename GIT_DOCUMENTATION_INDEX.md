@@ -115,6 +115,7 @@
 - `agents/genomes/GIT_enforcement.genome.yaml` — Enforcement Agent ("Hitler") — NOT commissioned
 - `agents/genomes/GIT_code-review.genome.yaml` — Code Review Agent ("Deletion Paranoia") — NOT commissioned
 - `agents/genomes/GIT_architect.genome.yaml` — System Architect Agent — NOT commissioned
+- `agents/genomes/GIT_bp-demolition-man.genome.yaml` — BP Demolition Man ("Bullshit Preventer") — NOT commissioned
 
 **Template**:
 - `agents/MOJO-TEMPLATE.yaml` — Blueprint for creating new agent identity files
@@ -153,6 +154,18 @@
 **PURPOSE**: Human-readable agent documentation and roster overview
 **CONTAINS**: Commissioned agents + "Defined But Not Commissioned" section
 **WHEN TO READ**: Understanding which agent roles exist, which are active vs standby vs genome-only
+
+### 3.6 GIT_COMPLETE_AGENT_ROSTER.md - Comprehensive agent inventory
+
+**PURPOSE**: Complete visibility into agent "civilization" — ALL agents (commissioned, genome-defined, conceptual)
+**STRUCTURE**: 3 tiers (commissioned, genome-defined, conceptual) + strategic questions for Ali
+**WHEN TO READ**:
+- When Ali needs full agent ecosystem overview
+- Before proposing new agent role (check for duplicates/overlaps)
+- Understanding commission priority queue
+- Strategic planning for agent civilization growth
+**UPDATE FREQUENCY**: Real-time (when agent commissioned, genome created, or role conceptualized)
+**CREATED**: 2025-11-13 (Desktop Agent Directive 003.3)
 
 ---
 
@@ -233,6 +246,7 @@
 **Known Scripts**:
 - `tools/context-tracker.sh` — Context budget monitoring
 - `tools/ratio-checker.sh` — Builder:Librarian ratio enforcement
+- `tools/work-hour-tracker.sh` — Active work hour tracking (cumulative session hours, audit triggers)
 - Other operational scripts
 
 ---

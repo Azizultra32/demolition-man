@@ -20,13 +20,14 @@ This guide defines the operational procedures for agent sessions from clock-in t
 - [ ] Constitutional reading completed
 
 **Steps**:
-1. Read `GIT_ARKPASS_DEV_TENET_PRIME.md` (mandatory)
-2. Read `GIT_CURRENT_STATUS.md` (Layer 1 snapshot)
-3. Read `logs/YYYY-MM-DD.md` (today's log, Layer 2)
-4. Read `GIT_ACTIVE_ORDERS.md` (mission directives)
-5. Check `GIT_DESKTOP_AGENT_DIRECTIVES.md` for new batches
-6. Log clock-in in daily log with tmux session and context budget
-7. Begin work
+1. **Start work-hour tracking**: Run `tools/work-hour-tracker.sh start` to mark session start
+2. Read `GIT_ARKPASS_DEV_TENET_PRIME.md` (mandatory)
+3. Read `GIT_CURRENT_STATUS.md` (Layer 1 snapshot)
+4. Read `logs/YYYY-MM-DD.md` (today's log, Layer 2)
+5. Read `GIT_ACTIVE_ORDERS.md` (mission directives)
+6. Check `GIT_DESKTOP_AGENT_DIRECTIVES.md` for new batches
+7. Log clock-in in daily log with tmux session and context budget
+8. Begin work
 
 **Reference**: See `SOP-007: Clock-In to Daily Session` in `GIT_SOP_LIBRARY.md`
 
@@ -90,6 +91,11 @@ This guide defines the operational procedures for agent sessions from clock-in t
 ### 6. Create Handoff (If Needed)
 - If context >75% OR major phase complete
 - Create handoff document in `handoffs/YYYY-MM-DD-HH-MM-agent-name.md`
+
+### 7. Stop Work-Hour Tracking
+- **Final step**: Run `tools/work-hour-tracker.sh stop` to log session hours
+- Script automatically calculates duration and adds to cumulative total
+- Script will notify if audit due (every 24 active work hours)
 
 **Reference**: See `SOP-009: Clock-Out from Daily Session` in `GIT_SOP_LIBRARY.md`
 

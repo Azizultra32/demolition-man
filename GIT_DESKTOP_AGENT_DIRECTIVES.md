@@ -497,9 +497,266 @@ GitHub agents executing this batch should verify:
 
 ---
 
+## DIRECTIVE BATCH 003 - 2025-11-13
+
+**Issued By**: Desktop Agent (Gap Analysis Phase 1 final)
+**Priority**: HIGH
+**Estimated Context**: ~2k tokens per directive
+**Total Batch Size**: ~6k tokens
+**Target Completion**: Within 72 hours or next active session
+
+**Context**: Final batch from Phase 1 gap analysis. Addresses scheduling architecture, formalizes historically-referenced BP Demolition Man role, and provides comprehensive agent roster for Ali's strategic review.
+
+---
+
+### Directive 003.1: Implement Active-Work-Hour Scheduling System
+
+**Context (condensed)**:
+Grandmaster Ali works in burst sessions (e.g., 3 days on) followed by extended gaps (weeks off). Calendar-based "weekly" scheduling is meaningless for this pattern. Ali explicitly stated: "I'm going to work on this for three days. And then I'm not going to do anything for three weeks. That would be my normal operating mode...And so your weekly audits, if they're every Monday or if they're every seven days, it's not an appropriate yardstick" (Annunaki_1, lines 475-477). Current constitution references "weekly" audits without active-work-hour tracking mechanism.
+
+**Missing Element**:
+Active-work-hour tracking system to replace calendar-based scheduling. Constitution lacks "why" explanation for this architecture choice.
+
+**Implementation Instructions**:
+1. Create `tools/work-hour-tracker.sh` script with commands:
+   - `start` — Mark session start (clock-in)
+   - `stop` — Mark session end, calculate duration, add to cumulative total
+   - `status` — Show total active hours + audit status
+   - `check` — Return 0 if audit due (for scripts to call)
+   - `audit` — Mark audit as completed
+
+2. Create JSON state file: `mission-control/work-hours.json` (or add to existing `state.json`)
+   - Schema: total_hours, last_audit_at_hours, audit_interval_hours, current_session_start, sessions[]
+
+3. Replace ALL "weekly" references with "every N active work hours OR M calendar days (whichever first)"
+   - Search constitution for "weekly" → replace with dual-trigger format
+   - Example: "Every 24 active work hours OR 7 calendar days (whichever first)"
+   - Rationale: Active hours = primary; calendar = fallback "if it's not a big deal" (Ali quote, line 477)
+
+4. Update `GIT_SOP_LIBRARY.md` — Modify SOP-010 and other SOPs to use dual-trigger scheduling
+
+5. Update `GIT_AGENT_LIFECYCLE_GUIDE.md` — Add work-hour tracking to clock-in/clock-out procedures:
+   - Clock-in: Run `tools/work-hour-tracker.sh start`
+   - Clock-out: Run `tools/work-hour-tracker.sh stop`
+
+6. Add constitutional clause in `GIT_ARKPASS_DEV_TENET_PRIME.md` under "Scheduling & Audit Protocols":
+   - Explain burst work pattern vs calendar scheduling
+   - Document dual-trigger system (active hours OR calendar days)
+   - Reference work-hour-tracker.sh implementation
+
+**Success Criteria**:
+- [x] `tools/work-hour-tracker.sh` exists with all 5 commands working
+- [x] JSON state file created with work tracking schema
+- [x] All "weekly" references replaced with dual-trigger format in constitution
+- [x] SOP-010 and related SOPs updated
+- [x] AGENT_LIFECYCLE_GUIDE.md includes work-hour tracking in clock-in/out
+- [x] Constitutional clause explains "why" (Ali's burst work pattern)
+
+**Source Documents**:
+- Annunaki_1_-_REITERATION_OF_BIGGEST_CONCERNS_ (lines 475-477)
+- Ali's explicit rejection of calendar-based scheduling for burst work pattern
+
+**Estimated Context Cost**: ~2k tokens
+
+---
+
+### Directive 003.2: Formalize BP Demolition Man Role (Genome Only, Do NOT Commission)
+
+**Context (condensed)**:
+The "Bullshit Preventer Demolition Man" (call sign "Demolition Man") is extensively referenced throughout the constitution and historical conversations (king2.txt lines 1739-1753). Role: Nuke redundancy, consolidate duplicate files, prevent context bloat, audit [[WINNING]] ribbon inflation. Ali explicitly named this role "Bullshit Preventer Demolition Man" but NO genome exists in repo. This creates gap where constitutional clauses reference undefined agent role.
+
+**Missing Element**:
+`agents/genomes/bp-demolition-man.genome.yaml` does not exist.
+
+**Implementation Instructions**:
+1. Create `agents/genomes/GIT_bp-demolition-man.genome.yaml` with:
+   - genome_name: "bp-demolition-man"
+   - call_sign: "Demolition Man"
+   - formal_name: "Bullshit Preventer Demolition Man (B.P.D. Man)"
+   - Role: Redundancy elimination, duplicate cleanup, context bloat prevention
+   - Activation triggers:
+     - Librarian flags 3+ versions of same spec across directories
+     - Single document exceeds 500 lines due to bloat/redundancy
+     - Grandmaster Ali decree: "call Demolition Man"
+     - [[WINNING]] ribbon count exceeds 10% of active agents
+   - Authority:
+     - Nuke redundant/duplicate files after validation
+     - Merge conflicting specifications into single canonical version
+     - Issue [[MEH]]/[[LOSER]] ribbons for agents creating redundancy
+     - Audit [[WINNING]] inflation (enforce 10% threshold)
+   - Constraints:
+     - MUST validate before demolishing (ensure redundancy, not unique content)
+     - MUST preserve source stamps before deletion
+     - MUST document which files/specs won consolidation
+     - CANNOT demolish without comparison analysis
+   - Responsibilities:
+     - Scan for duplicate files with similar names/content
+     - Identify conflicting specifications (multiple "truth" sources)
+     - Clean up orphaned/outdated files
+     - Enforce "one canonical source" principle
+     - Audit performance ribbon distribution
+     - Create demolition reports documenting what was removed and why
+   - Prohibited:
+     - Demolishing unique content (must be redundant/duplicate)
+     - Deleting without creating comparison analysis first
+     - Constitutional amendments (Constitution Keeper only)
+     - Agent GENOME modifications
+
+2. Add "Redundancy Control: BP Demolition Man" section to `GIT_ARKPASS_DEV_TENET_PRIME.md`:
+   - Reference genome file
+   - Document activation triggers
+   - Clarify distinction from other quality control agents:
+     - NOT Hitler/Enforcement Agent (task accountability)
+     - NOT Code Review/Deletion Paranoia (75% rule validation)
+     - NOT Adjudicator (constitutional compliance)
+     - BP Demolition Man targets REDUNDANCY and CONTEXT BLOAT specifically
+
+3. Update `GIT_AGENTS.md` to add BP Demolition Man to "Defined But Not Commissioned" section
+
+4. Update `GIT_DOCUMENTATION_INDEX.md` Chapter 3 to include BP Demolition Man genome
+
+5. DO NOT commission agent (genome only, like Batch 001 pattern)
+
+**Success Criteria**:
+- [x] `bp-demolition-man.genome.yaml` exists with complete role definition
+- [x] Call sign "Demolition Man" and formal name "B.P.D. Man" documented
+- [x] Trigger conditions clearly specified (3+ duplicates, 500+ line bloat, Ali summons)
+- [x] Authority over redundancy elimination and ribbon audits defined
+- [x] Constitutional section added referencing genome
+- [x] Distinction from other quality control agents clarified
+- [x] Documentation reflects genome exists but agent not commissioned
+
+**Source Documents**:
+- king2.txt (lines 1739-1753) — Ali's original naming and role definition
+- ARKPASS_DEV_TENET_PRIME.md — Multiple BP Demolition Man references
+- Historical conversations referencing redundancy control
+
+**Estimated Context Cost**: ~2k tokens
+
+---
+
+### Directive 003.3: Create Complete Agent Roster Documentation
+
+**Context (condensed)**:
+Ali needs complete visibility into the agent "civilization" — not just commissioned agents, but ALL agent roles (genome-defined, conceptual, referenced in conversations). Current `GIT_AGENTS.md` shows commissioned + genome-defined agents but lacks comprehensive inventory. Ali asked about "Twin UI Agents", "Constitution Keeper", and other conceptual roles scattered across conversations. No single document provides full agent ecosystem overview.
+
+**Missing Element**:
+Comprehensive agent inventory showing commissioned, genome-defined, AND conceptual agents with strategic questions for Ali.
+
+**Implementation Instructions**:
+1. Create `GIT_COMPLETE_AGENT_ROSTER.md` with 3 tiers:
+   - **TIER 1: Commissioned Agents** (active roster)
+     - AGENT-00001 — Builder BROSKI
+     - AGENT-00002 — Adjudicator HOMESLICE
+     - AGENT-00003 — ANUNNAKI THREE
+     - AGENT-00004 — Consigliere (standby)
+     - Librarian (genome exists, no instance)
+
+   - **TIER 2: Genome-Defined But Not Commissioned**
+     - Architect Agent (AGENT-00006 candidate)
+     - Code Review Agent (AGENT-00007 candidate)
+     - Enforcement Agent (AGENT-00008 candidate)
+     - BP Demolition Man (AGENT-00009 candidate)
+
+   - **TIER 3: Conceptual Agents** (referenced but no genome)
+     - Constitution Keeper (or part of Adjudicator?)
+     - Emergency Tribunal agents (pending CIP-02)
+     - Precedent Librarian (or part of Librarian?)
+     - Twin UI Agents (process documented, not active)
+     - Quality Assurance Agent (if needed)
+     - Security Agent (if needed)
+     - Performance Optimization Agent (or part of BP Demolition Man?)
+
+2. Add section: "Agent ID Sequence" showing next available ID (AGENT-00005) and commission priority
+
+3. Add section: "Questions for Grandmaster Ali":
+   - Role consolidation decisions (Constitution Keeper vs Adjudicator, etc.)
+   - Commission priority (Librarian next? Or wait?)
+   - Genome archival (if roles unlikely to be commissioned)
+   - Agent civilization size (too many roles? Consolidate?)
+
+4. Update `GIT_DOCUMENTATION_INDEX.md` Chapter 3 to reference complete roster
+
+5. Optional: Add reference in README.md if one exists
+
+**Success Criteria**:
+- [x] `GIT_COMPLETE_AGENT_ROSTER.md` exists with all 3 tiers documented
+- [x] All commissioned agents listed with status (active/standby)
+- [x] All genome-defined agents listed with future commission IDs
+- [x] All conceptual agents listed with questions for Ali
+- [x] Strategic questions section helps Ali make commission/consolidation decisions
+- [x] Documentation Index updated
+
+**Source Documents**:
+- All agent genomes in `agents/genomes/`
+- All MOJOs in `agents/mojos/`
+- `agents/REGISTRY.yaml`
+- Historical conversations referencing conceptual agents
+- Constitutional references to agent roles
+
+**Estimated Context Cost**: ~2k tokens
+
+---
+
+### GitHub Agent Notes / Execution Log
+
+**Executed by**: ANUNNAKI THREE (AGENT-00003)
+**Session**: claude/context-window-investigation-011CV3f4LDqRVG7je42wgv9Q
+**Date**: 2025-11-13
+
+#### Directive 003.1 Execution (✅ COMPLETE)
+- Created `tools/work-hour-tracker.sh` with all 5 commands (start, stop, status, check, audit)
+- Created `mission-control/state.json` with work_tracking schema
+- Added "Scheduling & Audit Protocols" section to `GIT_ARKPASS_DEV_TENET_PRIME.md`
+- Updated SOP-010 in `GIT_SOP_LIBRARY.md` with dual-trigger system (24 active hours OR 7 calendar days)
+- Updated `GIT_AGENT_LIFECYCLE_GUIDE.md` clock-in/out procedures with work-hour tracking
+- Implemented fallback architecture per Ali's quote: "if it's not a big deal...we have to just use the Gregorian calendar"
+- Commit: TBD
+
+#### Directive 003.2 Execution (✅ COMPLETE)
+- Created `agents/genomes/GIT_bp-demolition-man.genome.yaml` (complete 140-line genome)
+- Added "Redundancy Control: BP Demolition Man" section to constitution (lines 208-241)
+- Updated `GIT_AGENTS.md` to add BP Demolition Man to "Defined But Not Commissioned" section
+- Updated `GIT_DOCUMENTATION_INDEX.md` Chapter 3 to include BP Demolition Man genome
+- Documented clear distinction from Enforcement, Code Review, and Adjudicator agents
+- Status: Genome defined, NOT commissioned (future AGENT-00009 or later)
+- Commit: TBD
+
+#### Directive 003.3 Execution (✅ COMPLETE)
+- Created `GIT_COMPLETE_AGENT_ROSTER.md` v1.0.0 with 3-tier structure
+- Documented 4 commissioned agents (TIER 1)
+- Documented 5 genome-defined agents (TIER 2)
+- Documented 7 conceptual agents (TIER 3)
+- Added 12 strategic questions for Ali decision-making
+- Updated `GIT_DOCUMENTATION_INDEX.md` Chapter 3.6 to reference complete roster
+- Updated `GIT_DOCUMENTATION_INDEX.md` Chapter 5.3 to include work-hour-tracker.sh
+- Commit: TBD
+
+#### Summary:
+**Files Created**: 3 total
+- `tools/work-hour-tracker.sh` — Active work hour tracking script (187 lines)
+- `mission-control/state.json` — Central state management with work tracking schema
+- `GIT_COMPLETE_AGENT_ROSTER.md` — Comprehensive agent inventory (3 tiers, 16 agents)
+
+**Files Modified**: 5 total
+- `GIT_ARKPASS_DEV_TENET_PRIME.md` — Added Scheduling & Audit Protocols + Redundancy Control sections
+- `GIT_SOP_LIBRARY.md` — Updated SOP-010 with dual-trigger scheduling
+- `GIT_AGENT_LIFECYCLE_GUIDE.md` — Added work-hour tracking to clock-in/out
+- `GIT_AGENTS.md` — Added BP Demolition Man to roster
+- `GIT_DOCUMENTATION_INDEX.md` — Added v3.6 (Complete Agent Roster) + work-hour-tracker.sh reference
+
+**Agent Genomes Created**: 1 (BP Demolition Man)
+**Scripts Created**: 1 (work-hour-tracker.sh)
+**Strategic Documents Created**: 1 (Complete Agent Roster)
+
+**Context Used**: ~155k tokens (78% of 200k budget)
+**Session Status**: Healthy, Batch 003 complete
+
+---
+
 ## FUTURE BATCHES (Desktop Agent: Queue Here)
 
-*Desktop Agent: Post next batch here after Batch 001 marked complete*
+*Desktop Agent: Post next batch here after Batch 003 marked complete*
 
 ---
 
@@ -511,6 +768,7 @@ GitHub agents executing this batch should verify:
 |----------|-------------|-----------------|----------|--------|-----------------|---------|
 | 001 | 2025-11-13 | 4 | CRITICAL | ✅ COMPLETE | 2025-11-13 | 576d517, 468ac85, bda9b95, 1e0398e |
 | 002 | 2025-11-13 | 3 | HIGH | ✅ COMPLETE | 2025-11-13 | a2a903b |
+| 003 | 2025-11-13 | 3 | HIGH | ✅ COMPLETE | 2025-11-13 | TBD |
 
 ---
 

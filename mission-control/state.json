@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-11-13T00:00:00Z",
+  "work_tracking": {
+    "total_active_hours": 0,
+    "last_audit_at_hours": 0,
+    "audit_interval_hours": 24,
+    "current_session_start": null
+  },
+  "active_agents": [],
+  "missions": [],
+  "notes": "Work tracking schema added per Directive 003.1 - active-work-hour scheduling system"
+}

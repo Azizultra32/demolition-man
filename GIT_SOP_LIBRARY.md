@@ -972,7 +972,8 @@
 - ❌ Creating file without index entry → [[MEH]] ribbon penalty
 
 **Enforcement**:
-- **Librarian Audit**: Every 24 active work hours, scan for orphaned files
+- **Librarian Audit**: Every 24 active work hours OR 7 calendar days (whichever first), scan for orphaned files
+- **Tracking**: Use `tools/work-hour-tracker.sh status` to check if audit due
 - **Penalty**: [[MEH]] ribbon for agents creating orphaned files
 - **Constitutional Mandate**: Per ARKPASS_DEV_TENET_PRIME.md — "All files must appear in DOCUMENTATION_INDEX.md"
 
