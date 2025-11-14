@@ -309,6 +309,194 @@ GitHub agents executing this batch should verify:
 
 ---
 
+## DIRECTIVE BATCH 002 - 2025-11-13
+
+**Issued By**: Desktop Agent (Gap Analysis Phase 1 continued)
+**Priority**: HIGH
+**Estimated Context**: ~2.5k tokens per directive
+**Total Batch Size**: ~7.5k tokens
+**Target Completion**: Within 72 hours or next active session
+
+**Context**: Continuing gap analysis - identified critical process/documentation gaps from historical conversations. These gaps affect operational efficiency and framework completeness.
+
+---
+
+### Directive 002.1: Document Twin UI Competitive Development Pattern (Do NOT Commission Yet)
+
+**Context (condensed)**:
+During project inception, Grandmaster Ali specified a "Twin UI Agents" pattern: "two agents that work together and then separately and then together again for UI improvements that are constantly running in the background" (Annunaki_1, line 183 + Annunaki___Convo_FULL_, line 4581). The concept: Two Builder agents (Twin A, Twin B) work on parallel UI implementations, compete/compare approaches, then merge the best solution. One attempt "crashed" historically, and Ali asked if this pattern was "reflected in the Constitution" - it is NOT. Ali concluded: "We don't need to create the twin A and twin B and the keeper. We don't need those right now. That's not a priority" (line 466) but wanted it DOCUMENTED for future reference.
+
+**Missing Element**:
+Twin UI competitive development pattern documentation missing from repo. No process definition, no genome specifications, no constitutional reference.
+
+**Implementation Instructions**:
+1. Create documentation file: `processes/GIT_TWIN_UI_COMPETITIVE_DEVELOPMENT.md`
+   - Title: "Twin UI Competitive Development Pattern (Future Implementation)"
+   - Status: Documented but NOT active
+   - Concept: Two Builders implement same UI feature in parallel, compare results, merge best
+   - Rationale: "better to have like two reference points relative to each other" (Ali quote)
+   - Historical context: One attempt crashed, surviving UI became baseline
+   - Process workflow (5 phases)
+   - Activation criteria: "When Ali decides it's time" - not a priority currently
+   - Deferred decision: Ali chose iterative approach over competitive development for now
+
+2. Add reference in `GIT_ARKPASS_DEV_TENET_PRIME.md` under "Future Agent Roles":
+   - Brief mention: "Twin UI Competitive Development (documented, not active)"
+   - Reference: See `processes/GIT_TWIN_UI_COMPETITIVE_DEVELOPMENT.md`
+
+3. Update `GIT_DOCUMENTATION_INDEX.md` to include this new process document
+
+4. DO NOT create genomes, DO NOT commission agents - this is DOCUMENTATION ONLY
+
+**Success Criteria**:
+- [x] `processes/GIT_TWIN_UI_COMPETITIVE_DEVELOPMENT.md` exists with complete pattern definition
+- [x] Ali's original concept documented with exact quotes
+- [x] Historical crash mentioned (for context)
+- [x] Clear status: "Documented but NOT active"
+- [x] Constitutional reference added (future roles section)
+- [x] No agents commissioned (documentation only)
+
+**Source Documents**:
+- Annunaki_1_-_REITERATION_OF_BIGGEST_CONCERNS_ (lines 183, 466)
+- Annunaki___Convo_FULL_ (line 4581)
+- Ali's explicit "not a priority" statement (line 466)
+
+**Estimated Context Cost**: ~2.5k tokens
+
+---
+
+### Directive 002.2: Create A-to-Z Linear Documentation Index Framework
+
+**Context (condensed)**:
+Grandmaster Ali emphasized documentation must have "flow and organization...tree-like, chaptered structure" to prevent "forgotten silo events" (Annunaki_1, lines 181-182, 468). Current `DOCUMENTATION_INDEX.md` exists but lacks hierarchical chapter organization. Ali wants assurance that "anything within the index is organized and there are chapters or there's a natural flow that ensures that no item within the index can just go into like a forgotten silo event and never looked at again, that it's part of a larger framework" (line 468). This ties to Librarian routine audits - docs must be ACTIVELY reviewed, not just cataloged.
+
+**Missing Element**:
+`DOCUMENTATION_INDEX.md` lacks hierarchical A-to-Z chapter structure with navigation flow.
+
+**Implementation Instructions**:
+1. Restructure `GIT_DOCUMENTATION_INDEX.md` with 9-chapter hierarchy (see directive template in original file for full structure)
+
+2. Add "Orphan Prevention Protocol" section
+
+3. Create `SOP-010: Documentation Index Maintenance` in `GIT_SOP_LIBRARY.md`
+
+4. Add constitutional clause in `GIT_ARKPASS_DEV_TENET_PRIME.md` under "Documentation Governance"
+
+**Success Criteria**:
+- [x] `GIT_DOCUMENTATION_INDEX.md` restructured with 9 chapters
+- [x] All existing files mapped to appropriate chapters
+- [x] "Orphan Prevention Protocol" section added
+- [x] SOP-010 created for index maintenance
+- [x] Constitutional clause added
+- [x] Clear navigation flow between related documents
+
+**Source Documents**:
+- Annunaki_1_-_REITERATION_OF_BIGGEST_CONCERNS_ (lines 181-182, 468)
+- Ali's requirement for "tree-like, chaptered structure"
+
+**Estimated Context Cost**: ~2.5k tokens
+
+---
+
+### Directive 002.3: Create Auto-Update SOP for CURRENT_STATUS.md After Missions
+
+**Context (condensed)**:
+Grandmaster Ali identified recurring problem: `CURRENT_STATUS.md` not updating after mission completion. Ali asked TWO questions: (1) "go ahead and update" [immediate fix], and (2) "How to prevent this from happening again?" (Annunaki_1, line 184). Ali explicitly rejected automated scripts ("I hate automated scripts"), rejected assigning to single agent without process. Solution must be: Librarian responsibility + SOP + reminder in agent genomes (lines 5231-5235). Ali wants "two parts" to every answer: fix the immediate issue AND address systemic prevention.
+
+**Missing Element**:
+No SOP defining `CURRENT_STATUS.md` update responsibility after mission completion. No reminder in agent genomes. No systemic prevention mechanism.
+
+**Implementation Instructions**:
+1. Add `SOP-011: Mission Completion Status Updates` to `GIT_SOP_LIBRARY.md` (detailed procedure provided in directive)
+
+2. Update ALL agent genomes (`GIT_builder.genome.yaml`, `GIT_librarian.genome.yaml`) with reminder about SOP-011
+
+3. Add to `GIT_AGENT_LIFECYCLE_GUIDE.md` clock-out section with SOP-011 steps
+
+**Success Criteria**:
+- [x] SOP-011 exists in `GIT_SOP_LIBRARY.md` with complete procedure
+- [x] Ali's "no automated scripts" preference documented
+- [x] Librarian accountability defined (2-hour window, [[MEH]] penalty)
+- [x] All agent genomes updated with SOP-011 reminder
+- [x] `GIT_AGENT_LIFECYCLE_GUIDE.md` clock-out section updated
+- [x] Clear trigger: Builder clock-out → Librarian SOP-011
+
+**Source Documents**:
+- Annunaki_1_-_REITERATION_OF_BIGGEST_CONCERNS_ (lines 184, 5231-5235)
+- Annunaki___Convo_FULL_ (line 5231: Ali's "I hate automated scripts")
+
+**Estimated Context Cost**: ~2.5k tokens
+
+---
+
+## BATCH 002 COMPLETION CHECKLIST
+
+GitHub agents executing this batch should verify:
+- [x] **Directive 002.1**: Twin UI pattern documented (NOT commissioned)
+- [x] **Directive 002.2**: `GIT_DOCUMENTATION_INDEX.md` restructured with chapters + SOP-010 created
+- [x] **Directive 002.3**: SOP-011 created for status updates + genomes updated
+- [x] All files committed with clear commit messages referencing Batch 002
+- [x] No agents commissioned (Batch 002 is documentation/process only)
+- [x] Mark this batch COMPLETE by adding completion timestamp below
+
+**Batch 002 Status**: ✅ **COMPLETE**
+
+**Completion Timestamp**: 2025-11-13T14:45Z
+**Completion Commit**: `a2a903b`
+
+**Next Agent Ready**: YES - All directives successfully executed
+
+---
+
+### GitHub Agent Notes / Execution Log
+
+**Executed by**: ANUNNAKI THREE (AGENT-00003)
+**Session**: claude/context-window-investigation-011CV3f4LDqRVG7je42wgv9Q
+**Date**: 2025-11-13
+
+#### Directive 002.1 Execution (✅ COMPLETE)
+- Created `processes/GIT_TWIN_UI_COMPETITIVE_DEVELOPMENT.md` (full pattern documentation)
+- Added "Future Agent Roles" section to `GIT_ARKPASS_DEV_TENET_PRIME.md`
+- Documented Ali's original vision, historical crash context, deferred decision
+- Status: Pattern documented, NOT active, awaiting Ali activation
+- Commit: Part of `a2a903b`
+
+#### Directive 002.2 Execution (✅ COMPLETE)
+- Restructured `GIT_DOCUMENTATION_INDEX.md` v2.0.0 (9-chapter hierarchy)
+- Created SOP-010: Documentation Index Maintenance in `GIT_SOP_LIBRARY.md`
+- Added "Documentation Governance" section to constitution
+- Added "Orphan Prevention Protocol" with Librarian audit requirements
+- Updated GIT_DOCUMENTATION_INDEX.md change log and statistics
+- Commit: Part of `a2a903b`
+
+#### Directive 002.3 Execution (✅ COMPLETE)
+- Created SOP-011: Mission Completion Status Updates in `GIT_SOP_LIBRARY.md`
+- Updated `agents/genomes/GIT_builder.genome.yaml` with mission completion protocol
+- Updated `agents/genomes/GIT_librarian.genome.yaml` with SOP-011 enforcement
+- Created `GIT_AGENT_LIFECYCLE_GUIDE.md` v1.0.0 with full lifecycle procedures
+- Documented Ali's "I hate automated scripts" preference
+- 2-hour Librarian accountability with [[MEH]] ribbon penalty
+- Commit: Part of `a2a903b`
+
+#### Summary:
+**Files Created**: 2 total
+- `processes/GIT_TWIN_UI_COMPETITIVE_DEVELOPMENT.md` — Twin UI pattern doc
+- `GIT_AGENT_LIFECYCLE_GUIDE.md` — Agent lifecycle procedures
+
+**Files Modified**: 5 total
+- `GIT_ARKPASS_DEV_TENET_PRIME.md` — Added Future Agent Roles + Documentation Governance sections
+- `GIT_DOCUMENTATION_INDEX.md` — v2.0.0 restructure with 9 chapters
+- `GIT_SOP_LIBRARY.md` — Added SOP-010 and SOP-011 (v1.2.0)
+- `agents/genomes/GIT_builder.genome.yaml` — Added mission completion protocol
+- `agents/genomes/GIT_librarian.genome.yaml` — Added SOP-011 enforcement
+
+**SOPs Added**: 2 (SOP-010: Documentation Index Maintenance, SOP-011: Mission Completion Status Updates)
+
+**Context Used**: ~94k tokens (47% of 200k budget)
+**Session Status**: Healthy, ready for Batch 003
+
+---
+
 ## FUTURE BATCHES (Desktop Agent: Queue Here)
 
 *Desktop Agent: Post next batch here after Batch 001 marked complete*
@@ -321,7 +509,8 @@ GitHub agents executing this batch should verify:
 
 | Batch ID | Date Posted | Directive Count | Priority | Status | Completion Date | Commits |
 |----------|-------------|-----------------|----------|--------|-----------------|---------|
-| 001 | 2025-11-13 | 4 | CRITICAL | 🟡 PENDING | - | - |
+| 001 | 2025-11-13 | 4 | CRITICAL | ✅ COMPLETE | 2025-11-13 | 576d517, 468ac85, bda9b95, 1e0398e |
+| 002 | 2025-11-13 | 3 | HIGH | ✅ COMPLETE | 2025-11-13 | a2a903b |
 
 ---
 
