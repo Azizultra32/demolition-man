@@ -885,27 +885,238 @@
 
 ---
 
-## 🧬 Category 4: Mission Control Operations
+## 🧬 Category 4: Documentation & Knowledge Management
+
+### SOP-010: Documentation Index Maintenance
+
+**Purpose**: Ensure all repository files are cataloged in DOCUMENTATION_INDEX.md to prevent "forgotten silo events"
+
+**Prerequisites**:
+- [ ] New file has been created OR existing file discovered as orphan
+- [ ] File is governance/documentation related (not build artifacts, node_modules, etc.)
+
+**Steps**:
+
+1. **Identify Appropriate Chapter**
+   ```markdown
+   # Review 9 chapters in DOCUMENTATION_INDEX.md:
+   # 1. Constitutional Foundation
+   # 2. Operational State (DNA Layer)
+   # 3. Agent Infrastructure
+   # 4. Mission Control (RNA Layer)
+   # 5. Daily Operations (Protein Layer)
+   # 6. Governance Workflows
+   # 7. Handoffs & Continuity
+   # 8. Technical Specifications
+   # 9. Archives & History
+
+   # Select chapter matching file's function
+   ```
+
+2. **Add File Entry to Chapter**
+   ```markdown
+   # In DOCUMENTATION_INDEX.md, under appropriate chapter subsection:
+
+   ### X.Y filename.md - Brief description
+   **PURPOSE**: What this file does and why it exists
+   **WHEN TO READ**:
+   - Specific situation 1
+   - Specific situation 2
+   **UPDATE FREQUENCY**: How often content changes
+   **STATUS**: (if not yet complete) 🚧 Pending/Planned/etc.
+   ```
+
+3. **Update Quick Reference Tables** (if applicable)
+   ```markdown
+   # If file answers common question, add to "I Need to Find..." table:
+   | New question | Ch X → `filename.md` |
+
+   # If file is role-specific reading, add to "I Am Role X..." table
+   ```
+
+4. **Update Index Statistics**
+   ```markdown
+   # Increment document count:
+   **Total Documents Cataloged**: 60+ → 61+
+
+   # If new chapter subsection created, update Chapter Breakdown
+   ```
+
+5. **Update Change Log**
+   ```markdown
+   # Add entry to DOCUMENTATION_INDEX.md change log:
+   | 2025-11-XX | 2.X.Y | Added `filename.md` to Chapter X.Y | AGENT-##### |
+   ```
+
+6. **Commit Atomically with File Creation**
+   ```bash
+   # CRITICAL: Update index in SAME commit as file creation
+   git add path/to/newfile.md GIT_DOCUMENTATION_INDEX.md
+   git commit -m "docs: Add newfile.md with index entry (Ch X.Y)"
+   git push -u origin <branch-name>
+   ```
+
+**Success Criteria**:
+- [x] File appears in appropriate chapter in DOCUMENTATION_INDEX.md
+- [x] Entry includes: Purpose, When to Read, Update Frequency
+- [x] Quick Reference Tables updated (if applicable)
+- [x] Index statistics updated
+- [x] Change log entry added
+- [x] Index update committed atomically with file creation
+
+**Common Pitfalls**:
+- ❌ Creating file in separate commit from index update → orphan window exists
+- ❌ Adding to wrong chapter → confuses navigation
+- ❌ Vague purpose statement → agents don't know when to read
+- ❌ Forgetting to update statistics → index appears stale
+- ❌ Creating file without index entry → [[MEH]] ribbon penalty
+
+**Enforcement**:
+- **Librarian Audit**: Every 24 active work hours, scan for orphaned files
+- **Penalty**: [[MEH]] ribbon for agents creating orphaned files
+- **Constitutional Mandate**: Per ARKPASS_DEV_TENET_PRIME.md — "All files must appear in DOCUMENTATION_INDEX.md"
+
+---
+
+## 🧬 Category 5: Operational Procedures
+
+### SOP-011: Mission Completion Status Updates
+
+**Purpose**: Update CURRENT_STATUS.md after mission completion to prevent status desync
+
+**Prerequisites**:
+- [ ] Builder has announced mission completion (explicit "MISSION COMPLETE" statement)
+- [ ] Mission deliverables exist (Royal Briefing, commits, documentation, etc.)
+
+**Authority**: Librarian assigned to mission oversight
+
+**Trigger**: Builder clocks out with "MISSION COMPLETE" status
+
+**Steps**:
+
+1. **Builder Announces Completion**
+   ```markdown
+   # In daily log, Builder writes:
+   ## 90% Context Summary
+   ...
+   **Mission Status**: MISSION [MISSION-ID] COMPLETE
+
+   **Deliverables**:
+   - Royal Briefing: consigliere/briefings/ROYAL-BRIEFING-2025-11-XX.md
+   - Commits: abc1234, def5678
+   - Documentation: Updated X, Y, Z
+   ```
+
+2. **Librarian Reads Mission Deliverables**
+   ```bash
+   # Review what Builder actually delivered:
+   git log --oneline HEAD~5..HEAD
+   cat consigliere/briefings/ROYAL-BRIEFING-2025-11-XX.md
+   # Verify completion quality
+   ```
+
+3. **Librarian Updates CURRENT_STATUS.md**
+   ```markdown
+   # Move completed mission from "Active Missions" to "Completed Missions":
+
+   ## Completed Missions
+   | Mission ID | Description | Assigned Agent | Status | Completion Date | Deliverables |
+   |------------|-------------|----------------|--------|-----------------|--------------|
+   | MISSION-123 | Deploy coordination infrastructure | AGENT-00001 | ✅ Complete (100%) | 2025-11-13 | Royal Briefing RB-2025-11-13, commits abc1234 |
+
+   # Update mission status percentage to 100%
+   # Record completion date
+   # Link to deliverables
+   ```
+
+4. **Librarian Updates Agent MOJO Files**
+   ```yaml
+   # Edit agents/mojos/AGENT-00001.yaml:
+
+   session_history:
+     - session_id: "Session 3"
+       date: "2025-11-13"
+       duration_hours: 3.5
+       task: "MISSION-123: Deploy coordination infrastructure"
+       outcome: "success"
+       deliverables:
+         - "Royal Briefing RB-2025-11-13"
+         - "Commits: abc1234, def5678"
+       ratings:
+         quality: 4.5
+         timeliness: 5.0
+         communication: 4.0
+   ```
+
+5. **Librarian Commits Changes**
+   ```bash
+   git add GIT_CURRENT_STATUS.md agents/mojos/AGENT-00001.yaml
+   git commit -m "docs: Update status after MISSION-123 completion (AGENT-00001)"
+   git push -u origin <branch-name>
+   ```
+
+6. **Fallback: Prime Executes if Librarian Unavailable**
+   ```markdown
+   # If no Librarian assigned OR Librarian unavailable:
+   # Prime (Supervisor) executes SOP-011 within 2 hours
+   # Prime documents in daily log: "Executed SOP-011 due to Librarian unavailability"
+   ```
+
+**Success Criteria**:
+- [x] Completed mission moved to "Completed Missions" section in CURRENT_STATUS.md
+- [x] Mission status updated to 100% with completion date
+- [x] Deliverables linked clearly
+- [x] Builder MOJO updated with session results
+- [x] Changes committed with clear message
+- [x] Execution within 2 hours of Builder clock-out
+
+**Accountability**:
+- **Builder Must**: Announce completion explicitly with "MISSION [ID] COMPLETE" in 90% summary
+- **Librarian Must**: Execute SOP-011 within 2 hours of Builder clock-out
+- **Failure Penalty**: [[MEH]] ribbon for Librarian if status not updated within 2 hours
+
+**Why No Automated Script**:
+Per Grandmaster Ali: "I hate automated scripts, to be honest" (Annunaki___Convo_FULL_, line 5231)
+- Human (agent) judgment required to assess completion quality
+- Status updates reflect nuanced mission outcomes, not just binary done/not-done
+- Agent accountability more valuable than automation convenience
+
+**Common Pitfalls**:
+- ❌ Builder says "done" without explicit "MISSION COMPLETE" → Librarian may miss it
+- ❌ Librarian updates status >2 hours later → status desync confuses next agent
+- ❌ Forgetting to update MOJO → performance record incomplete
+- ❌ Not linking deliverables → hard to verify completion quality
+
+**Enforcement**:
+- Librarians must check daily logs every clock-in for "MISSION COMPLETE" announcements
+- If Builder forgets to announce explicitly, Librarian proactively asks for confirmation
+- If Librarian fails to execute within 2 hours, Prime intervenes and logs [[MEH]] ribbon
+
+---
+
+## 🧬 Category 6: Future Procedures
 
 (Additional SOPs to be added as processes mature)
 
 **Planned SOPs**:
-- SOP-010: Create Royal Briefing (Consigliere)
-- SOP-011: Execute Tea Ceremony (The Twins)
-- SOP-012: Assign Door ID (Librarian)
-- SOP-013: Create Precedent Registry Entry (Adjudicator)
-- SOP-014: Handle Constitutional Emergency (Constitution Keeper)
-- SOP-015: Commission Hybrid Genome Child Agent (Procreation protocol)
+- SOP-012: Create Royal Briefing (Consigliere)
+- SOP-013: Execute Tea Ceremony (The Twins)
+- SOP-014: Assign Door ID (Librarian)
+- SOP-015: Create Precedent Registry Entry (Adjudicator)
+- SOP-016: Handle Constitutional Emergency (Constitution Keeper)
+- SOP-017: Commission Hybrid Genome Child Agent (Procreation protocol)
 
 ---
 
 ## 📊 SOP Statistics
 
-**Total SOPs**: 9
+**Total SOPs**: 11
 **Category 1 (Agent Lifecycle)**: 3 SOPs
 **Category 2 (Constitutional Governance)**: 3 SOPs
 **Category 3 (Session Management)**: 3 SOPs
-**Category 4 (Mission Control)**: 0 SOPs (planned: 6)
+**Category 4 (Documentation & Knowledge Management)**: 1 SOP
+**Category 5 (Operational Procedures)**: 1 SOP
+**Category 6 (Future Procedures)**: 0 SOPs (planned: 6)
 
 **Most Used SOPs** (estimated):
 1. SOP-007: Clock-In (every session)
@@ -940,9 +1151,11 @@
 | Date | Version | Changes | Updated By |
 |------|---------|---------|------------|
 | 2025-11-12 | 1.0.0 | Initial SOP_LIBRARY.md creation. 9 SOPs covering agent lifecycle, constitutional governance, session management. | Claude Code (context-window-investigation) |
+| 2025-11-13 | 1.1.0 | Added SOP-010: Documentation Index Maintenance per Desktop Agent Directive 002.2. Created Category 4 (Documentation & Knowledge Management). | ANUNNAKI THREE (AGENT-00003) executing Batch 002 |
+| 2025-11-13 | 1.2.0 | Added SOP-011: Mission Completion Status Updates per Desktop Agent Directive 002.3. Created Category 5 (Operational Procedures). | ANUNNAKI THREE (AGENT-00003) executing Batch 002 |
 
 ---
 
-**END OF SOP_LIBRARY.md v1.0.0**
+**END OF SOP_LIBRARY.md v1.2.0**
 
 *Follow SOPs for consistency. Improve SOPs through experience.*

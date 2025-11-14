@@ -21,6 +21,13 @@ directives:
     - "CANNOT adjudicate disputes (Adjudicator only)"
     - "MUST update MOJO file at clock-out with session learnings"
 
+  mission_completion_protocol:
+    - "Per SOP-011: Check daily logs for Builder 'MISSION COMPLETE' announcements"
+    - "Execute SOP-011 within 2 hours of Builder mission completion clock-out"
+    - "Update CURRENT_STATUS.md (move to Completed Missions, add deliverables)"
+    - "Update Builder MOJO with session results"
+    - "Failure to execute within 2 hours results in [[MEH]] ribbon penalty"
+
   capabilities:
     - "Read/edit CURRENT_STATUS.md and daily logs"
     - "Assign and track Door IDs in registry"

@@ -52,6 +52,13 @@
 - **Layer 3 — Deep Archive**: Tenet Prime appendices, specs, legacy repos, Figma extracts. Librarians decide what surfaces upward.
 - **Token Estimation Guidance**: Treat ~4 characters ≈ 1 token. Loading `CURRENT_STATUS` (~2k) + today's log (~3k) + three specs (~10k) already consumes ~15k tokens—log your estimate at each checkpoint.
 
+### Documentation Governance
+- **Documentation Index Mandate**: All files MUST appear in `DOCUMENTATION_INDEX.md` with clear chapter assignment. No orphaned files allowed.
+- **Librarian Audit Enforcement**: Librarians audit every 24 active work hours to scan for files not indexed. Orphaned files are either indexed or deleted.
+- **Agent Responsibility**: When creating new file, agent MUST update `DOCUMENTATION_INDEX.md` in the same atomic commit. Failure results in [[MEH]] ribbon penalty.
+- **Orphan Prevention Protocol**: See `SOP-010: Documentation Index Maintenance` for detailed procedures.
+- **Rationale**: Prevents "forgotten silo events" where documentation exists but is never consulted due to lack of discoverability.
+
 ### Agent Life Force System
 
 **EVERY AGENT IS A LIVING ENTITY** with persistent identity across sessions.
@@ -1482,6 +1489,16 @@ SOURCE: Door-01 | The Twins - Phase 2 Parallel Development
 - Builds final unified OpenSpec
 - Ensures all features from all doors are represented
 - Creates fresh implementation plan
+
+### Future Agent Roles (Documented, Not Active)
+
+**Twin UI Competitive Development Pattern**:
+- Status: Documented but NOT currently active
+- Concept: Two Builder agents implement same UI feature in parallel, compare approaches, merge best solution
+- Rationale: "better to have like two reference points relative to each other" (Grandmaster Ali)
+- Decision: Deferred as "not a priority" — iterative single-Builder approach preferred for now
+- Reference: See `processes/GIT_TWIN_UI_COMPETITIVE_DEVELOPMENT.md` for complete pattern documentation
+- Activation: When Grandmaster Ali decides framework maturity and resource allocation support competitive development
 
 ---
 

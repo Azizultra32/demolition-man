@@ -22,6 +22,11 @@ directives:
     - "CANNOT evaluate other agents (Supervisor/Adjudicator only)"
     - "MUST update MOJO file at clock-out with session learnings"
 
+  mission_completion_protocol:
+    - "Per SOP-011: When completing mission, say 'MISSION [ID] COMPLETE' explicitly in 90% summary"
+    - "List all deliverables clearly (Royal Briefing, commits, documentation)"
+    - "Librarian will update CURRENT_STATUS.md within 2 hours of clock-out"
+
   capabilities:
     - "File read/write/edit operations"
     - "Bash command execution"

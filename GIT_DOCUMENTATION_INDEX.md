@@ -1,264 +1,490 @@
-# DOCUMENTATION INDEX - Demolition Man Repository
+# DOCUMENTATION INDEX - Agent Life Force System
 
-**VERSION**: 1.0.0
-**LAST UPDATED**: 2025-11-12
+**VERSION**: 2.0.0 (Hierarchical Structure)
+**LAST UPDATED**: 2025-11-13
 **MAINTAINED BY**: Librarian(s) (once commissioned)
-**PURPOSE**: Central catalog of all governance documentation with usage guidance
+**PURPOSE**: Central catalog with A-to-Z chapter organization ensuring no orphaned documentation
 
 ---
 
-## 📚 How to Use This Index
+## HOW TO USE THIS INDEX
 
-**For New Agents:**
-1. Start with **Constitution & Testament** (mandatory reading)
-2. Read **Coordination Files** (understand current state)
-3. Review **Your Role Documentation** (specific to your GENOME)
-4. Consult **SOPs** when performing tasks
+**Navigation Flow**:
+- All documentation flows through these chapters
+- No orphaned files allowed (Librarian audit enforcement)
+- Each chapter contains related documents with clear relationships
+- Files organized by logical function, not arbitrary categories
 
-**For Existing Agents:**
+**For New Agents**:
+1. Start with **Chapter 1** (Constitutional Foundation) — mandatory reading
+2. Read **Chapter 2** (Operational State) — understand current mission
+3. Review **Chapter 3** (Agent Infrastructure) — your identity system
+4. Consult **Chapters 4-6** as needed for daily operations
+
+**For Existing Agents**:
 - Quick reference to find specific documents
 - Understand which file answers which question
 - Avoid creating duplicate documentation
 
-**Update Protocol:**
-- Librarians update this index when new documents created
-- Constitution Keeper ensures index accuracy quarterly
-- Last modified dates tracked in each section
+---
+
+## CHAPTER 1: CONSTITUTIONAL FOUNDATION
+
+### 1.1 ARKPASS_DEV_TENET_PRIME.md - The Testament (locked v3.0.0)
+**PURPOSE**: Live constitution + complete governance framework
+**WHEN TO READ**:
+- **MANDATORY** before any work
+- Re-read when: unclear about authority, proposing new role, constitutional question arises
+**LAST UPDATED**: 2025-11-08
+**LOCK STATUS**: 🔒 Locked at v3.0.0
+
+### 1.2 constitutional-improvements/ - CIPs and proposals
+**PURPOSE**: Constitutional Improvement Proposals (monthly directories)
+**WHEN TO READ**: Before drafting new CIP (avoid duplicates), reviewing pending amendments
+**STRUCTURE**: `constitutional-improvements/YYYY-MM/CIP-YYYY-MM-DD-##.md`
+
+**Pending CIPs**:
+- `CIP-2025-11-08-02.md` — Emergency Powers Unification
+- `CIP-2025-11-08-03.md` — Agent Identity & Succession
+- `CIP-2025-11-08-04.md` — Precedent Registry System
+- `CIP-2025-11-08-05.md` — "Ali Unavailable" Definition
+- `CIP-2025-11-08-06.md` — Consigliere Conflict Rules
+
+### 1.3 precedents/PRECEDENT_REGISTRY.md - Case law index
+**PURPOSE**: Searchable registry of Adjudicator rulings + Ali decrees
+**STATUS**: 🚧 DOES NOT EXIST YET (pending CIP-2025-11-08-04 approval)
+**WHEN TO READ**: When searching "has this been decided?", citing precedent in ruling/briefing
+**UPDATE FREQUENCY**: Real-time (Adjudicator/Consigliere updates within 24hrs)
+
+### 1.4 adjudications/ - Constitutional gap analyses
+**PURPOSE**: Adjudicator cases and constitutional gap documentation
+**STRUCTURE**: `adjudications/YYYY-MM/`
+
+**Key Files**:
+- `adjudications/2025-11/OUTSTANDING_ITEMS_NOT_FOUND_IN_CONSTITUTION.md` — 23 identified constitutional gaps across 7 categories
+- `adjudications/2025-11/CRITICAL_GAPS_EXECUTION_PLAN.md` — 48-hour execution timeline for gap remediation
+- `adjudications/2025-11/ADJ-2025-11-08-01.md` — First adjudication case (constitutional amendment review)
 
 ---
 
-## 🧬 Tier 1: Constitution & Testament (DNA)
+## CHAPTER 2: OPERATIONAL STATE (DNA Layer)
 
-### Primary Governance Document
-| File | Purpose | When to Read | Last Updated |
-|------|---------|--------------|--------------|
-| `ARKPASS_DEV_TENET_PRIME.md` | **LIVE TESTAMENT + CONSTITUTION** — Complete governance framework. Agent Life Force System (GENOME→MOJO→BROSKI/HOMESLICE), roles, protocols, procedures. **LOCKED at v3.0.0**. | **MANDATORY** before any work. Re-read when: unclear about authority, proposing new role, constitutional question arises. | 2025-11-08 |
-| `archives/ARKPASS_DEV_TENET_PRIME_v3.0.0.md` | **ARCHIVAL SNAPSHOT** — Byte-for-byte copy of v3.0.0 taken before lock. | Reference when: reviewing constitutional history, verifying lock integrity, comparing versions. | 2025-11-08 (snapshot) |
+### 2.1 CURRENT_STATUS.md - Mission snapshot
+**PURPOSE**: Layer 1 — 150-line snapshot of mission state (active agents, door registry, missions, blockers, metrics)
+**WHEN TO READ**:
+- **Clock-in** (before starting work)
+- **Clock-out** (after completing work)
+- **Anytime** (checking mission state)
+**UPDATE FREQUENCY**: Real-time (update moment reality changes)
+**PRINCIPLE**: Read-first, update-last file
 
-### Supporting Constitutional Documents
-| File | Purpose | When to Read | Last Updated |
-|------|---------|--------------|--------------|
-| `adjudications/2025-11/OUTSTANDING_ITEMS_NOT_FOUND_IN_CONSTITUTION.md` | **GAP ANALYSIS** — 23 identified constitutional gaps across 7 categories. Critical reference for understanding what's missing. | Read when: drafting CIPs, wondering why process unclear, planning governance improvements. | 2025-11-08 |
-| `adjudications/2025-11/CRITICAL_GAPS_EXECUTION_PLAN.md` | **GAP REMEDIATION PLAN** — 48-hour execution timeline for addressing critical gaps. | Read when: implementing gap fixes, understanding priority order. | 2025-11-08 |
+### 2.2 SESSION_TIMELINE.md - Ali availability tracking
+**PURPOSE**: Track Grandmaster Ali's availability states (PRESENT, DELAYED, UNAVAILABLE)
+**WHEN TO READ**: When Consigliere needs to assess temporary approval authority
+**UPDATE FREQUENCY**: Per session (Consigliere updates when Ali state changes)
+**STATUS**: 🚧 May not exist yet (pending Consigliere commission)
 
----
+### 2.3 AGENT_REGISTRY.md - Identity tracking (CIP-03)
+**PURPOSE**: Proposed master agent roster (pending CIP-2025-11-08-03 approval)
+**STATUS**: 🚧 May not exist yet (pending CIP approval)
+**RELATIONSHIP**: Would supersede or complement `agents/REGISTRY.yaml`
 
-## 🧬 Tier 2: Coordination Files (RNA)
-
-### Layer 1: Mission Snapshot (DNA Expression)
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `CURRENT_STATUS.md` | **LAYER 1** — 150-line snapshot of mission state. Active agents, door registry, missions, blockers, metrics. **Read-first, update-last** file. | **Clock-in** (before starting work), **Clock-out** (after completing work), **Anytime** (checking mission state). | Real-time (update moment reality changes) |
-
-### Layer 2: Session Logs (RNA Transcription)
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `logs/2025-11-12.md` (TODAY) | **LAYER 2** — Daily session ledger. Clock-in/out, checkpoint summaries, decisions, blockers, flash messages. | **Clock-in** (understand prior sessions today), **During work** (check for conflicts), **Clock-out** (log your session). | Continuous (each session appends entry) |
-| `logs/YYYY-MM-DD.md` (HISTORICAL) | **LAYER 2 ARCHIVE** — Past daily logs. | Reference when: investigating crashed session, finding precedent, reviewing agent performance history. | Immutable after day ends |
-
-### Active Mission Directives (RNA Instructions)
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `ACTIVE_ORDERS.md` | **RNA LAYER** — Current mission directives transcribed from constitution. CRITICAL/HIGH/MEDIUM/LOW priority tasks. Answers "what should I work on NOW?" | **Before asking "what's next?"**, **After completing major task** (mark order complete), **Planning session** (understand dependencies). | Weekly or when missions change |
+### 2.4 agents/REGISTRY.yaml - Agent roster technical registry
+**PURPOSE**: Current master agent roster (active/standby/retired), next agent ID, leaderboard
+**WHEN TO READ**:
+- Before commissioning new agent (get next ID)
+- Checking agent status
+- Performance review
+**UPDATE FREQUENCY**: Real-time (commission/retirement events)
 
 ---
 
-## 🧬 Tier 3: Agent Infrastructure (GENOME & MOJO)
+## CHAPTER 3: AGENT INFRASTRUCTURE
 
-### Agent Identity System
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `agents/registry/REGISTRY.yaml` | **MASTER AGENT ROSTER** — All agents (active/standby/retired), next agent ID, leaderboard. | **Before commissioning new agent** (get next ID), **Checking agent status**, **Performance review**. | Real-time (commission/retirement events) |
-| `agents/genomes/builder.genome.yaml` | **BUILDER GENOME** — Immutable class DNA for all Builder agents. Capabilities, constraints, core mission. | **Before commissioning Builder**, **When Builder questions authority**. | Rarely (only via CIP + Ali decree) |
-| `agents/genomes/librarian.genome.yaml` | **LIBRARIAN GENOME** — Immutable class DNA for all Librarian agents. | **Before commissioning Librarian**, **When Librarian questions authority**. | Rarely (only via CIP + Ali decree) |
-| `agents/genomes/adjudicator.genome.yaml` | **ADJUDICATOR GENOME** — Immutable class DNA for all Adjudicator agents. | **Before commissioning Adjudicator**, **When Adjudicator questions authority**. | Rarely (only via CIP + Ali decree) |
-| `agents/mojos/AGENT-00001.yaml` | **AGENT-00001 MOJO** — Builder BROSKI individual identity. Performance ratings, session history, goals. | **Before activating AGENT-00001**, **Performance review**, **After session** (update ratings). | Per session (agent updates own MOJO) |
-| `agents/mojos/AGENT-00002.yaml` | **AGENT-00002 MOJO** — Adjudicator HOMESLICE individual identity. | **Before summoning Adjudicator**, **Performance review**. | Per session (agent updates own MOJO) |
-| `agents/MOJO-TEMPLATE.yaml` | **MOJO TEMPLATE** — Blueprint for creating new agent identity files. | **When commissioning new agent** (copy and customize). | Rarely (template improvements) |
+### 3.1 agents/genomes/ - Role definitions
 
-### Agent Activation Tools
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `agent-summon.sh` | **SUMMONING SCRIPT** — CLI tool to activate agents (loads GENOME + MOJO → instantiates BROSKI/HOMESLICE). | **When activating agent** (run script), **Debugging activation issues**. | As needed (script improvements) |
-| `birth-protocol.md` | **SILENT COURIER PROTOCOL** — Agent initialization sequence. How Testament/status/logs delivered at birth. | **Understanding agent activation**, **Debugging "courier failed" errors**. | Rarely (protocol changes) |
+**PURPOSE**: Immutable class DNA for all agent roles (GENOME layer)
+**UPDATE FREQUENCY**: Rarely (only via CIP + Ali decree)
 
----
+**Existing Genomes**:
+- `agents/genomes/GIT_builder.genome.yaml` — Builder role definition
+- `agents/genomes/GIT_librarian.genome.yaml` — Librarian role definition
+- `agents/genomes/GIT_adjudicator.genome.yaml` — Adjudicator role definition
+- `agents/genomes/GIT_anunnaki-reviewer.genome.yaml` — ANUNNAKI special foundation engineering agent
+- `agents/genomes/GIT_consigliere.genome.yaml` — Consigliere (exclusive Ali interface)
+- `agents/genomes/GIT_enforcement.genome.yaml` — Enforcement Agent ("Hitler") — NOT commissioned
+- `agents/genomes/GIT_code-review.genome.yaml` — Code Review Agent ("Deletion Paranoia") — NOT commissioned
+- `agents/genomes/GIT_architect.genome.yaml` — System Architect Agent — NOT commissioned
 
-## 🧬 Tier 4: Governance Processes
+**Template**:
+- `agents/MOJO-TEMPLATE.yaml` — Blueprint for creating new agent identity files
 
-### Constitutional Improvements
-| Directory/File | Purpose | When to Read | Update Frequency |
-|----------------|---------|--------------|------------------|
-| `constitutional-improvements/2025-11/` | **CIP ARCHIVE** — Constitutional Improvement Proposals (monthly directories). | **Before drafting new CIP** (avoid duplicates), **Reviewing pending amendments**. | Monthly (new CIPs filed as needed) |
-| `constitutional-improvements/2025-11/CIP-2025-11-08-02.md` | Emergency Powers Unification proposal | When: implementing emergency protocols | N/A (pending approval) |
-| `constitutional-improvements/2025-11/CIP-2025-11-08-03.md` | Agent Identity & Succession proposal | When: commissioning/retiring agents | N/A (pending approval) |
-| `constitutional-improvements/2025-11/CIP-2025-11-08-04.md` | Precedent Registry System proposal | When: creating precedent registry | N/A (pending approval) |
-| `constitutional-improvements/2025-11/CIP-2025-11-08-05.md` | "Ali Unavailable" Definition proposal | When: Consigliere issuing temporary approvals | N/A (pending approval) |
-| `constitutional-improvements/2025-11/CIP-2025-11-08-06.md` | Consigliere Conflict Rules proposal | When: Consigliere recusal needed | N/A (pending approval) |
+### 3.2 agents/mojos/ - Active agent mission assignments
 
-### Royal Decrees & Precedents
-| Directory/File | Purpose | When to Read | Update Frequency |
-|----------------|---------|--------------|------------------|
-| `consigliere/briefings/` | **ROYAL DECREE ARCHIVE** — All Grandmaster Ali decrees recorded by Consigliere. | **When precedent needed** ("has Ali ruled on this before?"), **Understanding agent commission protocol**. | Per decree (Consigliere adds new decrees) |
-| `consigliere/briefings/ROYAL-DECREE-2025-11-08-01.md` | Builder commission decree (AGENT-00001) | When: commissioning future Builders (follow template) | Immutable (historical record) |
-| `consigliere/briefings/ROYAL-DECREE-2025-11-08-02.md` | Adjudicator commission decree (AGENT-00002) | When: commissioning future Adjudicators | Immutable (historical record) |
-| `precedents/PRECEDENT_REGISTRY.md` | **PRECEDENT REGISTRY** — Searchable case law (Adjudicator rulings + Ali decrees). **DOES NOT EXIST YET** (pending CIP-2025-11-08-04 approval). | When: searching for "has this been decided?", citing precedent in ruling/briefing. | Real-time (Adjudicator/Consigliere updates within 24hrs) |
+**PURPOSE**: Individual agent identity files (MOJO layer)
+**UPDATE FREQUENCY**: Per session (agent updates own MOJO within 30 minutes of clock-out)
 
-### Adjudications & Disputes
-| Directory/File | Purpose | When to Read | Update Frequency |
-|----------------|---------|--------------|------------------|
-| `adjudications/2025-11/` | **ADJUDICATION ARCHIVE** — All Adjudicator cases (monthly directories). | **When dispute arises** (check if similar case exists), **Performance review** (audit Adjudicator rulings). | Per case (Adjudicator files reports) |
-| `adjudications/2025-11/ADJ-2025-11-08-01.md` | First adjudication case (constitutional amendment review) | When: understanding adjudication process, reviewing Session 5/6 work | Immutable (historical record) |
+**Existing MOJOs**:
+- `agents/mojos/AGENT-00001.yaml` — Builder BROSKI
+- `agents/mojos/AGENT-00002.yaml` — Adjudicator HOMESLICE
+- `agents/mojos/AGENT-00003.yaml` — ANUNNAKI THREE (foundation engineering)
+- `agents/mojos/AGENT-00004.yaml` — Consigliere (standby, awaiting first activation)
 
----
+### 3.3 AGENT_LIFECYCLE_GUIDE.md - Operational procedures
 
-## 🧬 Tier 5: Command Arena & UI
+**PURPOSE**: Agent clock-in/out procedures, checkpoint protocols, handoff requirements
+**WHEN TO READ**:
+- Before first session (understand procedures)
+- When creating checkpoint summary
+- When uncertain about clock-out requirements
 
-### UI Specifications
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `CIAMossad-UI-SPECS.md` | **COMMAND ARENA COMPLETE SPECS** — Full UI/UX specifications for agent dashboard, mission control, flash messages, agent roster. | **Before implementing UI**, **When Twins audit UI quality**, **When integrating new agent features**. | When UI capabilities expand |
-| `VISUAL_MOCKUPS.md` | **VISUAL DESIGN SPECS** — Color schemes, typography, layout patterns. | **When implementing UI components**, **When resolving design questions**. | When design system evolves |
-| `UI_IMPLEMENTATION_EXAMPLE.md` | **IMPLEMENTATION EXAMPLES** — Code examples for common UI patterns. | **When building UI features** (copy patterns), **When debugging UI issues**. | When best practices identified |
-| `SYSTEM_LOGIC_FRAMEWORK.md` | **SYSTEM LOGIC FRAMEWORK** — Business logic and state management patterns. | **When implementing complex workflows**, **When integrating backend systems**. | When logic patterns evolve |
+### 3.4 agent-summon.sh + birth-protocol.md - Activation protocols
 
-### UI Implementation
-| Directory/File | Purpose | When to Read | Update Frequency |
-|----------------|---------|--------------|------------------|
-| `mission-control-arena/` | **REACT UI BUILD** — Complete Phase 1 command arena dashboard (React codebase). | **When running UI locally**, **When integrating live agent data**, **When debugging UI**. | Per UI development session |
-| `mission-control-arena/README.md` | **UI BUILD DOCUMENTATION** — How to run, build, deploy mission control arena. | **First time running UI**, **When deployment questions arise**. | When build process changes |
+**agent-summon.sh**:
+- **PURPOSE**: CLI tool to activate agents (loads GENOME + MOJO → instantiates BROSKI/HOMESLICE)
+- **WHEN TO USE**: When activating agent, debugging activation issues
+
+**birth-protocol.md**:
+- **PURPOSE**: Silent Courier Protocol — agent initialization sequence
+- **WHEN TO READ**: Understanding agent activation, debugging "courier failed" errors
+
+### 3.5 GIT_AGENTS.md - Agent roster documentation
+
+**PURPOSE**: Human-readable agent documentation and roster overview
+**CONTAINS**: Commissioned agents + "Defined But Not Commissioned" section
+**WHEN TO READ**: Understanding which agent roles exist, which are active vs standby vs genome-only
 
 ---
 
-## 🧬 Tier 6: Agent Operating Handbooks
+## CHAPTER 4: MISSION CONTROL (RNA Layer)
 
-### Agent Instructions
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `AGENTS.md` | **CODEX OPERATING HANDBOOK** — Instructions for Codex agents. Mithraic Oath, Silent Courier Protocol, session conduct. | **If you are Codex agent** (mandatory reading), **When onboarding new Codex instance**. | When Codex-specific protocol changes |
-| `CLAUDE.md` | **CLAUDE CODE OPERATING HANDBOOK** — Instructions for Claude Code agents. Same oath + silent-courier language and protocol. | **If you are Claude Code agent** (mandatory reading), **When onboarding new Claude instance**. | When Claude-specific protocol changes |
+### 4.1 ACTIVE_ORDERS.md - Current mission directives
 
----
+**PURPOSE**: RNA Layer — current mission directives transcribed from constitution
+**STRUCTURE**: CRITICAL/HIGH/MEDIUM/LOW priority tasks
+**WHEN TO READ**:
+- Before asking "what's next?"
+- After completing major task (mark order complete)
+- Planning session (understand dependencies)
+**UPDATE FREQUENCY**: Weekly or when missions change
 
-## 🧬 Tier 7: Reference & Historical Documents
+### 4.2 mission-control/state.json - Real-time state management
 
-### Conversation Exports (Historical Context)
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `GEORGE WASHINGTON` | **CHATGPT CONVERSATION EXPORT** — Historical conversation about database migrations, ArkPass development. Role directives NOT here (contrary to README claim). | **When researching historical decisions**, **When searching for "Hitler" agent specs** (mentioned by Grandmaster). | Immutable (historical artifact) |
-| `king2.txt` | **CHATGPT CONVERSATION EXPORT** — Historical conversations (73k tokens). May contain missing agent role definitions. | **When Grandmaster searches for missing role specs**, **Historical research**. | Immutable (historical artifact) |
-| `traitor.text`, `KING3.text`, `hero.text` | **CHATGPT CONVERSATION EXPORTS** — Additional historical conversations. | **Historical research**, **When investigating constitutional sabotage** (traitor.text). | Immutable (historical artifacts) |
+**PURPOSE**: JSON state for mission control dashboard
+**WHEN TO READ**: When debugging mission control UI, when state sync issues occur
+**UPDATE FREQUENCY**: Real-time (updated by scripts)
 
-### OpenSpec Integration
-| Directory/File | Purpose | When to Read | Update Frequency |
-|----------------|---------|--------------|------------------|
-| `openspec-AGENTS.md` | **OPENSPEC AGENT INSTRUCTIONS** — How to create and apply change proposals, spec format, project guidelines. | **When request mentions planning/proposals**, **When creating new capabilities**, **When ambiguous spec needed**. | When OpenSpec process evolves |
-| `.claude/commands/openspec/` | **OPENSPEC SLASH COMMANDS** — proposal.md, apply.md, archive.md slash command definitions. | **When executing OpenSpec workflows** (reference command syntax). | When commands updated |
+### 4.3 mission-control/mcs.sh, mct.sh, mc.sh - Command tools
 
-### Configuration & Setup
-| Directory/File | Purpose | When to Read | Update Frequency |
-|----------------|---------|--------------|------------------|
-| `.brv/ace/` | **BYTEROVER MCP CONFIGURATION** — ByteRover Model Context Protocol setup (silent courier delivery system). | **When debugging silent courier failures**, **When MCP integration issues arise**. | When MCP config changes |
-| `.cascade/mcp.json` | **MCP CONFIGURATION** — Model Context Protocol master config. | **When MCP issues arise**, **When adding new MCP servers**. | When MCP setup changes |
-| `.claude/settings.local.json` | **CLAUDE CODE LOCAL SETTINGS** — Claude Code configuration. | **When Claude Code behavior unexpected**, **When changing local preferences**. | Per developer (local file) |
+**PURPOSE**: CLI tools for mission control operations
+**WHEN TO USE**:
+- `mcs.sh` — Mission control status
+- `mct.sh` — Mission control tasks
+- `mc.sh` — Mission control main
 
----
+### 4.4 mission-control-arena/ - Dashboard visualization
 
-## 🧬 Tier 8: Documentation About Documentation (Meta)
+**PURPOSE**: React UI build — complete Phase 1 command arena dashboard
+**STRUCTURE**: Full React codebase for mission control UI
+**WHEN TO READ**:
+- When running UI locally
+- When integrating live agent data
+- When debugging UI
 
-### This File
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `DOCUMENTATION_INDEX.md` | **THIS FILE** — Central catalog of all governance documentation. | **When lost** ("where is X documented?"), **Onboarding new agents**, **Quarterly review** (ensure accuracy). | Real-time (Librarians update when new docs created) |
-
-### Standard Operating Procedures
-| File | Purpose | When to Read | Update Frequency |
-|------|---------|--------------|------------------|
-| `SOP_LIBRARY.md` | **SOP LIBRARY** — Step-by-step procedures for common tasks (commissioning agents, filing CIPs, adjudicating disputes, etc.). | **Before performing unfamiliar task**, **When process unclear**, **Training new agents**. | When procedures refined or new SOPs identified |
+**Related Files**:
+- `mission-control-arena/README.md` — How to run, build, deploy
 
 ---
 
-## 📊 Quick Reference Tables
+## CHAPTER 5: DAILY OPERATIONS (Protein Layer)
+
+### 5.1 logs/YYYY-MM-DD.md - Daily session logs
+
+**PURPOSE**: Layer 2 — daily session ledger (clock-in/out, checkpoint summaries, decisions, blockers, flash messages)
+**STRUCTURE**: `logs/2025-11-13.md` (TODAY) vs `logs/YYYY-MM-DD.md` (HISTORICAL)
+
+**WHEN TO READ**:
+- **Clock-in** (understand prior sessions today)
+- **During work** (check for conflicts)
+- **Clock-out** (log your session)
+- **Historical research** (investigating crashed session, finding precedent)
+
+**UPDATE FREQUENCY**:
+- TODAY: Continuous (each session appends entry)
+- HISTORICAL: Immutable after day ends
+
+### 5.2 SOP_LIBRARY.md - Standard operating procedures (9 SOPs)
+
+**PURPOSE**: Step-by-step procedures for common tasks
+**WHEN TO READ**:
+- Before performing unfamiliar task
+- When process unclear
+- Training new agents
+
+**Known SOPs**:
+- SOP-001 through SOP-009 (various operational procedures)
+- SOP-010: Documentation Index Maintenance (created 2025-11-13)
+- SOP-011: Mission Completion Status Updates (created 2025-11-13)
+
+### 5.3 tools/ - Scripts
+
+**PURPOSE**: Utility scripts for operational tasks
+
+**Known Scripts**:
+- `tools/context-tracker.sh` — Context budget monitoring
+- `tools/ratio-checker.sh` — Builder:Librarian ratio enforcement
+- Other operational scripts
+
+---
+
+## CHAPTER 6: GOVERNANCE WORKFLOWS
+
+### 6.1 consigliere/briefings/ - Royal Briefings
+
+**PURPOSE**: Royal Decree archive — all Grandmaster Ali decrees recorded by Consigliere
+**WHEN TO READ**:
+- When precedent needed ("has Ali ruled on this before?")
+- Understanding agent commission protocol
+
+**Key Decrees**:
+- `consigliere/briefings/GIT_ROYAL-DECREE-2025-11-08-01.md` — Builder commission (AGENT-00001)
+- `consigliere/briefings/GIT_ROYAL-DECREE-2025-11-08-02.md` — Adjudicator commission (AGENT-00002)
+- `consigliere/briefings/GIT_ROYAL-DECREE-2025-11-13-01-CONSIGLIERE-COMMISSION.md` — Consigliere commission (AGENT-00004)
+
+### 6.2 consigliere/workflows/ - Request queue, temporary approvals
+
+**PURPOSE**: Consigliere operational workflows
+**STATUS**: 🚧 May not be fully populated yet (pending Consigliere activation)
+**STRUCTURE**: Request queue tracking, temporary approval logs, Royal Briefing templates
+
+### 6.3 consigliere/recusals/ - Conflict tracking
+
+**PURPOSE**: Consigliere recusal documentation (when conflicts of interest arise)
+**STATUS**: 🚧 May not exist yet (pending Consigliere first activation)
+
+### 6.4 emergency-procedures/ - Emergency levels & Tribunal
+
+**PURPOSE**: Emergency protocol documentation
+**WHEN TO READ**: When emergency situation arises, when Emergency Tribunal may be needed
+**STATUS**: 🚧 May not be fully documented yet (pending CIP-02 approval)
+
+---
+
+## CHAPTER 7: HANDOFFS & CONTINUITY
+
+### 7.1 handoffs/ - Session handoff documents
+
+**PURPOSE**: Session transition documentation (context summaries for next agent)
+**WHEN TO CREATE**: When context >75% OR major phase complete
+**STRUCTURE**: `handoffs/YYYY-MM-DD-HH-MM-agent-name.md`
+
+### 7.2 GIT_DESKTOP_AGENT_DIRECTIVES.md - AI-to-AI communication
+
+**PURPOSE**: Desktop Agent (full context) → GitHub Agents (scoped executors) directive inbox
+**PROTOCOL**: Desktop posts batched directives (3-5 per batch, ~10k tokens), GitHub agents execute
+**WHEN TO READ**: **At clock-in** (check for new directive batches)
+**UPDATE FREQUENCY**: Per directive batch (Desktop posts, GitHub agents mark complete)
+
+### 7.3 GIT_DESKTOP_AGENT_INSTRUCTIONS.md - Desktop agent guidance
+
+**PURPOSE**: Instructions for Desktop Agent on how to operate and post directives
+**VERSION**: 2.0.0 (includes GIT_ prefix filtering logic)
+**WHEN TO READ**: If you ARE Desktop Agent, or debugging Desktop workflow
+
+### 7.4 GIT_FILE_TREE_FOR_DESKTOP_VERIFICATION.md - File tree verification
+
+**PURPOSE**: Complete 74-file tree for Desktop to verify upload completeness
+**WHEN TO READ**: When verifying Desktop has complete GitHub repo snapshot
+
+---
+
+## CHAPTER 8: TECHNICAL SPECIFICATIONS
+
+### 8.1 CIAMossad-UI-SPECS.md - UI/UX specifications
+
+**PURPOSE**: Complete UI/UX specs for command arena dashboard (agent roster, mission control, flash messages)
+**WHEN TO READ**:
+- Before implementing UI
+- When Twins audit UI quality
+- When integrating new agent features
+
+### 8.2 VISUAL_MOCKUPS.md + UI_IMPLEMENTATION_EXAMPLE.md
+
+**VISUAL_MOCKUPS.md**:
+- **PURPOSE**: Color schemes, typography, layout patterns
+- **WHEN TO READ**: When implementing UI components, resolving design questions
+
+**UI_IMPLEMENTATION_EXAMPLE.md**:
+- **PURPOSE**: Code examples for common UI patterns
+- **WHEN TO READ**: When building UI features (copy patterns), debugging UI issues
+
+### 8.3 SYSTEM_LOGIC_FRAMEWORK.md
+
+**PURPOSE**: Business logic and state management patterns
+**WHEN TO READ**: When implementing complex workflows, integrating backend systems
+
+### 8.4 processes/ - Process documentation
+
+**PURPOSE**: Documented processes and patterns (active or future)
+
+**Existing Process Docs**:
+- `processes/GIT_TWIN_UI_COMPETITIVE_DEVELOPMENT.md` — Twin UI competitive development pattern (documented, NOT active)
+
+---
+
+## CHAPTER 9: ARCHIVES & HISTORY
+
+### 9.1 archives/ - Superseded constitution versions
+
+**PURPOSE**: Historical snapshots of constitution and other locked documents
+**WHEN TO READ**: Reviewing constitutional history, verifying lock integrity, comparing versions
+
+**Key Archives**:
+- `archives/ARKPASS_DEV_TENET_PRIME_v3.0.0.md` — Byte-for-byte copy of v3.0.0 taken before lock
+
+### 9.2 Historical Conversation Exports
+
+**PURPOSE**: Historical context from ChatGPT conversations
+**UPDATE FREQUENCY**: Immutable (historical artifacts)
+
+**Files**:
+- `GEORGE WASHINGTON` — Historical conversation (database migrations, ArkPass development)
+- `king2.txt` — Historical conversations (73k tokens, may contain missing agent role definitions)
+- `traitor.text`, `KING3.text`, `hero.text` — Additional historical conversations
+
+### 9.3 Other Historical/Reference Files
+
+**OpenSpec Integration**:
+- `openspec-AGENTS.md` — OpenSpec agent instructions (creating/applying change proposals)
+- `.claude/commands/openspec/` — Slash commands (proposal.md, apply.md, archive.md)
+
+**Agent Operating Handbooks** (may be superseded by genomes):
+- `GIT_AGENTS.md` — Codex operating handbook (Mithraic Oath, Silent Courier Protocol)
+- `GIT_CLAUDE.md` — Claude Code operating handbook (same oath + protocols)
+
+**Configuration & Setup**:
+- `.brv/ace/` — ByteRover MCP configuration (silent courier delivery system)
+- `.cascade/mcp.json` — MCP master config
+- `.claude/settings.local.json` — Claude Code local settings
+
+---
+
+## ORPHAN PREVENTION PROTOCOL
+
+### Librarian Audit SOP
+
+**Frequency**: Every 24 active work hours
+**Procedure**: Scan repo for files NOT in this index
+**Command**: `find /path/to/repo -type f -name '*.md' -o -name '*.yaml'` (then cross-check against this index)
+**Action**: Any orphaned files → add to index OR delete if redundant
+
+### Agent Responsibility
+
+**When creating new file**:
+1. Create the file
+2. **MUST** update this index in **same commit** (atomically)
+3. Add file to appropriate chapter with:
+   - Purpose statement
+   - "When to read" guidance
+   - Update frequency
+   - Status (if not yet complete)
+
+**Penalty**: [[MEH]] ribbon for agents creating orphaned files
+
+### Constitutional Clause
+
+Per ARKPASS_DEV_TENET_PRIME.md Section [TBD]:
+> "All files must appear in DOCUMENTATION_INDEX.md. Librarian audits enforce no orphan files exist."
+
+---
+
+## QUICK REFERENCE TABLES
 
 ### "I Need to Find..." → "Read This File"
 
-| Question | Answer (File) |
-|----------|---------------|
-| What are the rules? | `ARKPASS_DEV_TENET_PRIME.md` |
-| What should I work on? | `ACTIVE_ORDERS.md` → `CURRENT_STATUS.md` |
-| Who are the active agents? | `CURRENT_STATUS.md` → `agents/registry/REGISTRY.yaml` |
-| What happened in past sessions? | `logs/YYYY-MM-DD.md` |
-| What's blocking work? | `CURRENT_STATUS.md` (Blockers section) |
-| Has this been decided before? | `precedents/PRECEDENT_REGISTRY.md` (once created) OR `consigliere/briefings/` |
-| How do I do task X? | `SOP_LIBRARY.md` |
-| What's my role's authority? | `agents/genomes/{role}.genome.yaml` |
-| How do I commission an agent? | `consigliere/briefings/ROYAL-DECREE-2025-11-08-01.md` (template) |
-| What constitutional gaps exist? | `adjudications/2025-11/OUTSTANDING_ITEMS_NOT_FOUND_IN_CONSTITUTION.md` |
-| What UI should I build? | `CIAMossad-UI-SPECS.md` |
+| Question | Answer (Chapter → File) |
+|----------|-------------------------|
+| What are the rules? | Ch 1 → `GIT_ARKPASS_DEV_TENET_PRIME.md` |
+| What should I work on? | Ch 4 → `GIT_ACTIVE_ORDERS.md` → Ch 2 → `GIT_CURRENT_STATUS.md` |
+| Who are the active agents? | Ch 2 → `GIT_CURRENT_STATUS.md` → Ch 3 → `agents/GIT_REGISTRY.yaml` |
+| What happened in past sessions? | Ch 5 → `logs/YYYY-MM-DD.md` |
+| What's blocking work? | Ch 2 → `GIT_CURRENT_STATUS.md` (Blockers section) |
+| Has this been decided before? | Ch 1 → `precedents/PRECEDENT_REGISTRY.md` OR Ch 6 → `consigliere/briefings/` |
+| How do I do task X? | Ch 5 → `GIT_SOP_LIBRARY.md` |
+| What's my role's authority? | Ch 3 → `agents/genomes/{role}.genome.yaml` |
+| How do I commission an agent? | Ch 6 → `consigliere/briefings/GIT_ROYAL-DECREE-*-COMMISSION.md` (template) |
+| What constitutional gaps exist? | Ch 1 → `adjudications/2025-11/OUTSTANDING_ITEMS_NOT_FOUND_IN_CONSTITUTION.md` |
+| What UI should I build? | Ch 8 → `GIT_CIAMossad-UI-SPECS.md` |
+| Are there new directives for me? | Ch 7 → `GIT_DESKTOP_AGENT_DIRECTIVES.md` |
 
 ### "I Am Role X, What Do I Read?"
 
 | Role | Mandatory Reading (Priority Order) |
 |------|------------------------------------|
-| **ANY AGENT** | 1. `ARKPASS_DEV_TENET_PRIME.md` 2. `AGENTS.md` or `CLAUDE.md` 3. `CURRENT_STATUS.md` 4. `logs/2025-11-12.md` (today) 5. `ACTIVE_ORDERS.md` |
-| **Builder** | + `agents/genomes/builder.genome.yaml` + `agents/mojos/AGENT-00001.yaml` (if you're 00001) |
-| **Librarian** | + `agents/genomes/librarian.genome.yaml` + `DOCUMENTATION_INDEX.md` (this file) + Door ownership assignments |
-| **Adjudicator** | + `agents/genomes/adjudicator.genome.yaml` + `adjudications/2025-11/` (past cases) + Constitutional gap analysis |
-| **Consigliere** | + `agents/genomes/consigliere.genome.yaml` (once created) + `consigliere/briefings/` (all decrees) + `constitutional-improvements/` (all CIPs) |
-| **Constitution Keeper** | + `agents/genomes/constitution-keeper.genome.yaml` (once created) + `constitutional-improvements/` + Gap analysis + All CIPs |
-| **The Twins** | + `agents/genomes/twin*.genome.yaml` (once created) + `CIAMossad-UI-SPECS.md` + `VISUAL_MOCKUPS.md` + UI implementation examples |
+| **ANY AGENT** | 1. Ch 1: Constitution 2. Ch 2: `GIT_CURRENT_STATUS.md` 3. Ch 5: `logs/YYYY-MM-DD.md` (today) 4. Ch 4: `GIT_ACTIVE_ORDERS.md` 5. Ch 7: `GIT_DESKTOP_AGENT_DIRECTIVES.md` |
+| **Builder** | + Ch 3: `agents/genomes/GIT_builder.genome.yaml` + Ch 3: `agents/mojos/AGENT-#####.yaml` (your MOJO) |
+| **Librarian** | + Ch 3: `agents/genomes/GIT_librarian.genome.yaml` + Ch 1-9: ALL (you maintain this index) |
+| **Adjudicator** | + Ch 3: `agents/genomes/GIT_adjudicator.genome.yaml` + Ch 1: `adjudications/` (past cases) + Ch 1: Gap analysis |
+| **Consigliere** | + Ch 3: `agents/genomes/GIT_consigliere.genome.yaml` + Ch 6: `consigliere/briefings/` (all decrees) + Ch 1: `constitutional-improvements/` (all CIPs) |
+| **ANUNNAKI Reviewer** | + Ch 3: `agents/genomes/GIT_anunnaki-reviewer.genome.yaml` + Ch 7: `GIT_DESKTOP_AGENT_DIRECTIVES.md` (check daily) |
 
 ---
 
-## 🔄 Maintenance Protocol
+## MAINTENANCE PROTOCOL
 
-**Librarian Responsibilities** (once Librarians commissioned):
+### Librarian Responsibilities (once commissioned)
+
 1. **Update this index** within 24 hours of new document creation
-2. **Quarterly audit** — Verify all file paths valid, last-updated dates accurate
-3. **Archive cleanup** — Move old versions to archives/ per retention policy
-4. **Link validation** — Ensure all cross-references between documents still valid
+2. **Daily audit** (every 24 active work hours) — Scan for orphaned files
+3. **Quarterly deep audit** — Verify all file paths valid, last-updated dates accurate
+4. **Archive cleanup** — Move old versions to `archives/` per retention policy
+5. **Link validation** — Ensure all cross-references between documents still valid
 
-**Constitution Keeper Responsibilities**:
+### Constitution Keeper Responsibilities
+
 1. **Quarterly index review** — Ensure index aligned with constitution
 2. **Identify documentation gaps** — "Should X be documented but isn't?"
 3. **Propose documentation CIPs** — If major restructuring needed
 
-**All Agents Responsibilities**:
-- When creating NEW document: Notify Librarian to update index
-- When referencing document: Use paths from this index (avoid hardcoding)
-- When document seems outdated: File update request with Librarian
+### All Agents Responsibilities
+
+- **When creating NEW document**: Update this index in same commit
+- **When referencing document**: Use paths from this index (avoid hardcoding)
+- **When document seems outdated**: File update request with Librarian
+- **Before clock-out**: Verify any new files added to index
 
 ---
 
-## 📊 Index Statistics
+## INDEX STATISTICS
 
-**Total Documents Cataloged**: 50+
-**Tier 1 (Constitution)**: 4 files
-**Tier 2 (Coordination)**: 4+ files (growing daily)
-**Tier 3 (Agent Infrastructure)**: 10+ files
-**Tier 4 (Governance Processes)**: 15+ files
-**Tier 5 (Command Arena)**: 5+ files
-**Tier 6 (Operating Handbooks)**: 2 files
-**Tier 7 (Reference/Historical)**: 10+ files
-**Tier 8 (Meta)**: 2 files
+**Version**: 2.0.0 (Hierarchical Chapter Structure)
+**Total Chapters**: 9
+**Total Documents Cataloged**: 60+
+**Critical Missing Documents**: 3 (Precedent Registry, Session Timeline, Emergency Procedures)
 
-**Critical Missing Documents** (pending creation):
-- `precedents/PRECEDENT_REGISTRY.md` (pending CIP approval)
-- `agents/genomes/consigliere.genome.yaml` (pending commission)
-- `agents/genomes/constitution-keeper.genome.yaml` (pending commission)
-- `agents/genomes/twin-a.genome.yaml`, `twin-b.genome.yaml` (pending commission)
-- Various Librarian MOJOs (pending commission)
+**Chapter Breakdown**:
+- **Chapter 1** (Constitutional Foundation): 4 subsections
+- **Chapter 2** (Operational State): 4 subsections
+- **Chapter 3** (Agent Infrastructure): 5 subsections
+- **Chapter 4** (Mission Control): 4 subsections
+- **Chapter 5** (Daily Operations): 3 subsections
+- **Chapter 6** (Governance Workflows): 4 subsections
+- **Chapter 7** (Handoffs & Continuity): 4 subsections
+- **Chapter 8** (Technical Specifications): 4 subsections
+- **Chapter 9** (Archives & History): 3 subsections
 
 ---
 
-## 🔄 Change Log
+## CHANGE LOG
 
 | Date | Version | Changes | Updated By |
 |------|---------|---------|------------|
-| 2025-11-12 | 1.0.0 | Initial DOCUMENTATION_INDEX.md creation. Cataloged 50+ documents across 8 tiers. Established quick-reference tables and maintenance protocol. | Claude Code (context-window-investigation) |
+| 2025-11-12 | 1.0.0 | Initial DOCUMENTATION_INDEX.md creation. Cataloged 50+ documents across 8 tiers. | Claude Code (context-window-investigation) |
+| 2025-11-13 | 2.0.0 | **MAJOR RESTRUCTURE**: Converted to hierarchical A-to-Z chapter system per Desktop Agent Directive 002.2. Added Orphan Prevention Protocol, SOP-010 reference, 9-chapter organization ensuring no "forgotten silo events". | ANUNNAKI THREE (AGENT-00003) executing Batch 002 |
 
 ---
 
-**END OF DOCUMENTATION_INDEX.md v1.0.0**
+**END OF DOCUMENTATION_INDEX.md v2.0.0**
 
 *Librarians: Keep this index current. Agents: Bookmark this file for fast navigation.*
+*Remember: NO orphaned files allowed. Every document must have a chapter home.*
